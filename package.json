@@ -1,0 +1,42 @@
+{
+  "name": "react-native-eva-icons",
+  "version": "1.0.0",
+  "description": "Eva Icons for React Native",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run generate:fill && npm run generate:outline",
+    "lint": "tslint -p ./tsconfig.json",
+    "lint:fix": "npm run lint -- --fix",
+    "generate:fill": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/fill/svg ./src",
+    "generate:outline": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/outline/svg ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artyorsh/react-native-eva-icons.git"
+  },
+  "keywords": [
+    "react-native",
+    "eva-icons",
+    "svg"
+  ],
+  "author": "artyorsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artyorsh/react-native-eva-icons/issues"
+  },
+  "homepage": "https://github.com/artyorsh/react-native-eva-icons#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/rimraf": "^2.0.2",
+    "eva-icons": "^1.1.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "react": "16.5.0",
+    "react-native-svg": "^9.4.0"
+  }
+}
