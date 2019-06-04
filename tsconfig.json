@@ -1,26 +1,18 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/tsc-out",
+  "compilerOptions": {"outDir": "./dist/tsc-out",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
     "moduleResolution": "node",
+    "jsx": "react-native",
     "sourceMap": true,
     "target": "es2015",
     "module": "commonjs",
-    "declaration": true,
-    "downlevelIteration": true,
     "lib": [
       "es2015",
       "es2016",
       "es2017"
     ],
-    "baseUrl": "./",
-    "paths": {
-      "@eva/*": [
-        "./packages/*"
-      ]
-    },
     "typeRoots": [
       "./node_modules/@types"
     ]

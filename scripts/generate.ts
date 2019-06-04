@@ -1,36 +1,38 @@
 import fs from 'fs';
 import path from 'path';
+import {
+  createReactNativeElementName,
+  getFileNameFromPath,
+} from './common';
 
-// TODO: 1. Apply props
-// TODO: 2. Replace Attributes
-// TODO: 3. Formatting
+interface ReplacementMap {
+  [source: string]: string;
+}
 
-interface ReplacementMap { [source: string]: string }
-
-const PATTERN_FILE_NAME: RegExp = /-([a-z0-9])/g;
+const ROOT_TAG = 'Svg';
 
 const ELEMENT_REPLACE_MAP: ReplacementMap = {
-  'svg': 'Svg',
-  'rect': 'Svg.Rect',
-  'circle': 'Svg.Circle',
-  'ellipse': 'Svg.Ellipse',
-  'line': 'Svg.Line',
-  'polygon': 'Svg.Polygon',
-  'polyline': 'Svg.Polyline',
-  'path': 'Svg.Path',
-  'text': 'Svg.Text',
-  'tspan': 'Svg.TSpan',
-  'textPath': 'Svg.TextPath',
-  'g': 'Svg.G',
-  'use': 'Svg.Use',
-  'symbol': 'Svg.Symbol',
-  'defs': 'Svg.Defs',
-  'image': 'Svg.Image',
-  'clipPath': 'Svg.ClipPath',
-  'linearGradient': 'Svg.LinearGradient',
-  'radialGradient': 'Svg.RadialGradient',
-  'mask': 'Svg.Mask',
-  'pattern': 'Svg.Pattern',
+  svg: 'Svg',
+  rect: 'Svg.Rect',
+  circle: 'Svg.Circle',
+  ellipse: 'Svg.Ellipse',
+  line: 'Svg.Line',
+  polygon: 'Svg.Polygon',
+  polyline: 'Svg.Polyline',
+  path: 'Svg.Path',
+  text: 'Svg.Text',
+  tspan: 'Svg.TSpan',
+  textPath: 'Svg.TextPath',
+  g: 'Svg.G',
+  use: 'Svg.Use',
+  symbol: 'Svg.Symbol',
+  defs: 'Svg.Defs',
+  image: 'Svg.Image',
+  clipPath: 'Svg.ClipPath',
+  linearGradient: 'Svg.LinearGradient',
+  radialGradient: 'Svg.RadialGradient',
+  mask: 'Svg.Mask',
+  pattern: 'Svg.Pattern',
 };
 
 main();
@@ -39,6 +41,7 @@ function main() {
   const { [0]: sourceDir, [1]: destDir } = process.argv.splice(2);
 
   generateIconsForSourceDir(sourceDir, destDir);
+
 }
 
 function generateIconsForSourceDir(sourceDir: string, destDir: string) {
@@ -61,8 +64,8 @@ function createReactNativeSvgSource(filePath: string): string {
 
   const sourceSvg: string = fs.readFileSync(filePath).toString();
 
-  const reactNativeSvg: string = replaceSourceSvgWithMap(sourceSvg, ELEMENT_REPLACE_MAP);
-  const reactNativeElementName: string = createReactNativeElementName(fileName, PATTERN_FILE_NAME);
+  const reactNativeSvg: string = createReactNativeSvgElementFromSource(sourceSvg);
+  const reactNativeElementName: string = createReactNativeElementName(fileName);
 
   return createReactNativeElementSource(reactNativeElementName, reactNativeSvg);
 }
@@ -77,26 +80,20 @@ function createReactNativeElementSource(name: string, svg: string): string {
   ].join('\n\n');
 }
 
-function createReactNativeElementName(fileName: string, fileNamePattern: RegExp): string {
-  const camelCaseString: string = createCamelCaseString(fileName, fileNamePattern);
+function createReactNativeSvgElementFromSource(source: string): string {
+  const withReplacedElements: string = replaceSourceSvgWithMap(source, ELEMENT_REPLACE_MAP);
 
-  return createCapitalizeString(camelCaseString);
-}
-
-function createCamelCaseString(source: string, sourcePattern: RegExp): string {
-  return source.replace(sourcePattern, (part: string): string => {
-    return part[1].toUpperCase();
-  });
-}
-
-function createCapitalizeString(source: string): string {
-  return source.charAt(0).toUpperCase() + source.slice(1);
+  return assignPropsToSourceElement(withReplacedElements);
 }
 
 function replaceSourceSvgWithMap(source: string, map: ReplacementMap): string {
   return Object.keys(map).reduce((result: string, element: string): string => {
     return replaceElementWithReactNativeSvgElement(result, element);
   }, source);
+}
+
+function assignPropsToSourceElement(source: string): string {
+  return source.replace(new RegExp(`<${ROOT_TAG}`), `<${ROOT_TAG} {...props}`);
 }
 
 function replaceElementWithReactNativeSvgElement(source: string, element: string): string {
@@ -117,11 +114,3 @@ function createTagsReplacementMapForElement(element: string): ReplacementMap {
     [`</${element}`]: `</${reactNativeSvgElement}`,
   };
 }
-
-function getFileNameFromPath(sourcePath: string): string {
-  return path.basename(sourcePath, path.extname(sourcePath));
-}
-
-
-
-

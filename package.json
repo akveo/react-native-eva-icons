@@ -2,13 +2,18 @@
   "name": "react-native-eva-icons",
   "version": "1.0.0",
   "description": "Eva Icons for React Native",
-  "main": "index.js",
   "scripts": {
-    "start": "npm run generate:fill && npm run generate:outline",
-    "lint": "tslint -p ./tsconfig.json",
-    "lint:fix": "npm run lint -- --fix",
-    "generate:fill": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/fill/svg ./src",
-    "generate:outline": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/outline/svg ./src"
+    "start": "npm run gen:prepare && npm run gen:all && npm run lint:all",
+    "build": "tsc",
+    "clean": "rimraf ./src",
+    "lint:tslint": "tslint -c ./tslint.json ./src/**/*.{ts,tsx} --fix",
+    "lint:prettier": "prettier ./src/**/*.{ts,tsx} --write",
+    "lint:all": "npm run lint:prettier && npm run lint:tslint",
+    "gen:prepare": "mkdir src",
+    "gen:fill": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/fill/svg ./src",
+    "gen:outline": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/outline/svg ./src",
+    "gen:index": "ts-node ./scripts/generateIndex.ts ./src",
+    "gen:all": "npm run gen:fill && npm run gen:outline && npm run gen:index"
   },
   "repository": {
     "type": "git",
@@ -28,9 +33,11 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^12.0.2",
-    "@types/rimraf": "^2.0.2",
+    "@types/stringify-object": "^3.2.0",
     "eva-icons": "^1.1.1",
+    "prettier": "^1.17.1",
     "rimraf": "^2.6.3",
+    "stringify-object": "^3.3.0",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5"
