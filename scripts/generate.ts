@@ -1,15 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import {
-  createReactNativeElementName,
-  getFileNameFromPath,
-} from './common';
+import { getFileNameFromPath } from './common';
 
 interface ReplacementMap {
   [source: string]: string;
 }
 
-const ROOT_TAG = 'Svg';
+const ROOT_TAG: string = 'Svg';
 
 const ELEMENT_REPLACE_MAP: ReplacementMap = {
   svg: 'Svg',
@@ -60,24 +57,21 @@ function generateIconsForSourceDir(sourceDir: string, destDir: string) {
 }
 
 function createReactNativeSvgSource(filePath: string): string {
-  const fileName: string = getFileNameFromPath(filePath);
-
   const sourceSvg: string = fs.readFileSync(filePath).toString();
 
   const reactNativeSvg: string = createReactNativeSvgElementFromSource(sourceSvg);
-  const reactNativeElementName: string = createReactNativeElementName(fileName);
 
-  return createReactNativeElementSource(reactNativeElementName, reactNativeSvg);
+  return createReactNativeElementSource(reactNativeSvg);
 }
 
-function createReactNativeElementSource(name: string, svg: string): string {
+function createReactNativeElementSource(svg: string): string {
   return [
     'import React from \'react\';',
     'import Svg from \'react-native-svg\';',
-    `export const ${name} = (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (`,
+    `export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (`,
     svg,
     ');',
-  ].join('\n\n');
+  ].join('\n');
 }
 
 function createReactNativeSvgElementFromSource(source: string): string {

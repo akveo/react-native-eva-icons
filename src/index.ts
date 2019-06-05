@@ -1,978 +1,1472 @@
-import { ActivityOutline } from './activity-outline';
-import { Activity } from './activity';
-import { AlertCircleOutline } from './alert-circle-outline';
-import { AlertCircle } from './alert-circle';
-import { AlertTriangleOutline } from './alert-triangle-outline';
-import { AlertTriangle } from './alert-triangle';
-import { ArchiveOutline } from './archive-outline';
-import { Archive } from './archive';
-import { ArrowBackOutline } from './arrow-back-outline';
-import { ArrowBack } from './arrow-back';
-import { ArrowCircleDownOutline } from './arrow-circle-down-outline';
-import { ArrowCircleDown } from './arrow-circle-down';
-import { ArrowCircleLeftOutline } from './arrow-circle-left-outline';
-import { ArrowCircleLeft } from './arrow-circle-left';
-import { ArrowCircleRightOutline } from './arrow-circle-right-outline';
-import { ArrowCircleRight } from './arrow-circle-right';
-import { ArrowCircleUpOutline } from './arrow-circle-up-outline';
-import { ArrowCircleUp } from './arrow-circle-up';
-import { ArrowDownOutline } from './arrow-down-outline';
-import { ArrowDown } from './arrow-down';
-import { ArrowDownwardOutline } from './arrow-downward-outline';
-import { ArrowDownward } from './arrow-downward';
-import { ArrowForwardOutline } from './arrow-forward-outline';
-import { ArrowForward } from './arrow-forward';
-import { ArrowIosBackOutline } from './arrow-ios-back-outline';
-import { ArrowIosBack } from './arrow-ios-back';
-import { ArrowIosDownwardOutline } from './arrow-ios-downward-outline';
-import { ArrowIosDownward } from './arrow-ios-downward';
-import { ArrowIosForwardOutline } from './arrow-ios-forward-outline';
-import { ArrowIosForward } from './arrow-ios-forward';
-import { ArrowIosUpwardOutline } from './arrow-ios-upward-outline';
-import { ArrowIosUpward } from './arrow-ios-upward';
-import { ArrowLeftOutline } from './arrow-left-outline';
-import { ArrowLeft } from './arrow-left';
-import { ArrowRightOutline } from './arrow-right-outline';
-import { ArrowRight } from './arrow-right';
-import { ArrowUpOutline } from './arrow-up-outline';
-import { ArrowUp } from './arrow-up';
-import { ArrowUpwardOutline } from './arrow-upward-outline';
-import { ArrowUpward } from './arrow-upward';
-import { ArrowheadDownOutline } from './arrowhead-down-outline';
-import { ArrowheadDown } from './arrowhead-down';
-import { ArrowheadLeftOutline } from './arrowhead-left-outline';
-import { ArrowheadLeft } from './arrowhead-left';
-import { ArrowheadRightOutline } from './arrowhead-right-outline';
-import { ArrowheadRight } from './arrowhead-right';
-import { ArrowheadUpOutline } from './arrowhead-up-outline';
-import { ArrowheadUp } from './arrowhead-up';
-import { AtOutline } from './at-outline';
-import { At } from './at';
-import { Attach2Outline } from './attach-2-outline';
-import { Attach2 } from './attach-2';
-import { AttachOutline } from './attach-outline';
-import { Attach } from './attach';
-import { AwardOutline } from './award-outline';
-import { Award } from './award';
-import { BackspaceOutline } from './backspace-outline';
-import { Backspace } from './backspace';
-import { BarChart2Outline } from './bar-chart-2-outline';
-import { BarChart2 } from './bar-chart-2';
-import { BarChartOutline } from './bar-chart-outline';
-import { BarChart } from './bar-chart';
-import { BatteryOutline } from './battery-outline';
-import { Battery } from './battery';
-import { BehanceOutline } from './behance-outline';
-import { Behance } from './behance';
-import { BellOffOutline } from './bell-off-outline';
-import { BellOff } from './bell-off';
-import { BellOutline } from './bell-outline';
-import { Bell } from './bell';
-import { BluetoothOutline } from './bluetooth-outline';
-import { Bluetooth } from './bluetooth';
-import { BookOpenOutline } from './book-open-outline';
-import { BookOpen } from './book-open';
-import { BookOutline } from './book-outline';
-import { Book } from './book';
-import { BookmarkOutline } from './bookmark-outline';
-import { Bookmark } from './bookmark';
-import { BriefcaseOutline } from './briefcase-outline';
-import { Briefcase } from './briefcase';
-import { BrowserOutline } from './browser-outline';
-import { Browser } from './browser';
-import { BrushOutline } from './brush-outline';
-import { Brush } from './brush';
-import { BulbOutline } from './bulb-outline';
-import { Bulb } from './bulb';
-import { CalendarOutline } from './calendar-outline';
-import { Calendar } from './calendar';
-import { CameraOutline } from './camera-outline';
-import { Camera } from './camera';
-import { CarOutline } from './car-outline';
-import { Car } from './car';
-import { CastOutline } from './cast-outline';
-import { Cast } from './cast';
-import { ChargingOutline } from './charging-outline';
-import { Charging } from './charging';
-import { CheckmarkCircle2Outline } from './checkmark-circle-2-outline';
-import { CheckmarkCircle2 } from './checkmark-circle-2';
-import { CheckmarkCircleOutline } from './checkmark-circle-outline';
-import { CheckmarkCircle } from './checkmark-circle';
-import { CheckmarkOutline } from './checkmark-outline';
-import { CheckmarkSquare2Outline } from './checkmark-square-2-outline';
-import { CheckmarkSquare2 } from './checkmark-square-2';
-import { CheckmarkSquareOutline } from './checkmark-square-outline';
-import { CheckmarkSquare } from './checkmark-square';
-import { Checkmark } from './checkmark';
-import { ChevronDownOutline } from './chevron-down-outline';
-import { ChevronDown } from './chevron-down';
-import { ChevronLeftOutline } from './chevron-left-outline';
-import { ChevronLeft } from './chevron-left';
-import { ChevronRightOutline } from './chevron-right-outline';
-import { ChevronRight } from './chevron-right';
-import { ChevronUpOutline } from './chevron-up-outline';
-import { ChevronUp } from './chevron-up';
-import { ClipboardOutline } from './clipboard-outline';
-import { Clipboard } from './clipboard';
-import { ClockOutline } from './clock-outline';
-import { Clock } from './clock';
-import { CloseCircleOutline } from './close-circle-outline';
-import { CloseCircle } from './close-circle';
-import { CloseOutline } from './close-outline';
-import { CloseSquareOutline } from './close-square-outline';
-import { CloseSquare } from './close-square';
-import { Close } from './close';
-import { CloudDownloadOutline } from './cloud-download-outline';
-import { CloudDownload } from './cloud-download';
-import { CloudUploadOutline } from './cloud-upload-outline';
-import { CloudUpload } from './cloud-upload';
-import { CodeDownloadOutline } from './code-download-outline';
-import { CodeDownload } from './code-download';
-import { CodeOutline } from './code-outline';
-import { Code } from './code';
-import { CollapseOutline } from './collapse-outline';
-import { Collapse } from './collapse';
-import { ColorPaletteOutline } from './color-palette-outline';
-import { ColorPalette } from './color-palette';
-import { ColorPickerOutline } from './color-picker-outline';
-import { ColorPicker } from './color-picker';
-import { CompassOutline } from './compass-outline';
-import { Compass } from './compass';
-import { CopyOutline } from './copy-outline';
-import { Copy } from './copy';
-import { CornerDownLeftOutline } from './corner-down-left-outline';
-import { CornerDownLeft } from './corner-down-left';
-import { CornerDownRightOutline } from './corner-down-right-outline';
-import { CornerDownRight } from './corner-down-right';
-import { CornerLeftDownOutline } from './corner-left-down-outline';
-import { CornerLeftDown } from './corner-left-down';
-import { CornerLeftUpOutline } from './corner-left-up-outline';
-import { CornerLeftUp } from './corner-left-up';
-import { CornerRightDownOutline } from './corner-right-down-outline';
-import { CornerRightDown } from './corner-right-down';
-import { CornerRightUpOutline } from './corner-right-up-outline';
-import { CornerRightUp } from './corner-right-up';
-import { CornerUpLeftOutline } from './corner-up-left-outline';
-import { CornerUpLeft } from './corner-up-left';
-import { CornerUpRightOutline } from './corner-up-right-outline';
-import { CornerUpRight } from './corner-up-right';
-import { CreditCardOutline } from './credit-card-outline';
-import { CreditCard } from './credit-card';
-import { CropOutline } from './crop-outline';
-import { Crop } from './crop';
-import { CubeOutline } from './cube-outline';
-import { Cube } from './cube';
-import { DiagonalArrowLeftDownOutline } from './diagonal-arrow-left-down-outline';
-import { DiagonalArrowLeftDown } from './diagonal-arrow-left-down';
-import { DiagonalArrowLeftUpOutline } from './diagonal-arrow-left-up-outline';
-import { DiagonalArrowLeftUp } from './diagonal-arrow-left-up';
-import { DiagonalArrowRightDownOutline } from './diagonal-arrow-right-down-outline';
-import { DiagonalArrowRightDown } from './diagonal-arrow-right-down';
-import { DiagonalArrowRightUpOutline } from './diagonal-arrow-right-up-outline';
-import { DiagonalArrowRightUp } from './diagonal-arrow-right-up';
-import { DoneAllOutline } from './done-all-outline';
-import { DoneAll } from './done-all';
-import { DownloadOutline } from './download-outline';
-import { Download } from './download';
-import { DropletOffOutline } from './droplet-off-outline';
-import { DropletOff } from './droplet-off';
-import { DropletOutline } from './droplet-outline';
-import { Droplet } from './droplet';
-import { Edit2Outline } from './edit-2-outline';
-import { Edit2 } from './edit-2';
-import { EditOutline } from './edit-outline';
-import { Edit } from './edit';
-import { EmailOutline } from './email-outline';
-import { Email } from './email';
-import { ExpandOutline } from './expand-outline';
-import { Expand } from './expand';
-import { ExternalLinkOutline } from './external-link-outline';
-import { ExternalLink } from './external-link';
-import { EyeOff2Outline } from './eye-off-2-outline';
-import { EyeOff2 } from './eye-off-2';
-import { EyeOffOutline } from './eye-off-outline';
-import { EyeOff } from './eye-off';
-import { EyeOutline } from './eye-outline';
-import { Eye } from './eye';
-import { FacebookOutline } from './facebook-outline';
-import { Facebook } from './facebook';
-import { FileAddOutline } from './file-add-outline';
-import { FileAdd } from './file-add';
-import { FileOutline } from './file-outline';
-import { FileRemoveOutline } from './file-remove-outline';
-import { FileRemove } from './file-remove';
-import { FileTextOutline } from './file-text-outline';
-import { FileText } from './file-text';
-import { File } from './file';
-import { FilmOutline } from './film-outline';
-import { Film } from './film';
-import { FlagOutline } from './flag-outline';
-import { Flag } from './flag';
-import { FlashOffOutline } from './flash-off-outline';
-import { FlashOff } from './flash-off';
-import { FlashOutline } from './flash-outline';
-import { Flash } from './flash';
-import { Flip2Outline } from './flip-2-outline';
-import { Flip2 } from './flip-2';
-import { FlipOutline } from './flip-outline';
-import { Flip } from './flip';
-import { FolderAddOutline } from './folder-add-outline';
-import { FolderAdd } from './folder-add';
-import { FolderOutline } from './folder-outline';
-import { FolderRemoveOutline } from './folder-remove-outline';
-import { FolderRemove } from './folder-remove';
-import { Folder } from './folder';
-import { FunnelOutline } from './funnel-outline';
-import { Funnel } from './funnel';
-import { GiftOutline } from './gift-outline';
-import { Gift } from './gift';
-import { GithubOutline } from './github-outline';
-import { Github } from './github';
-import { Globe2Outline } from './globe-2-outline';
-import { Globe2 } from './globe-2';
-import { Globe3 } from './globe-3';
-import { GlobeOutline } from './globe-outline';
-import { Globe } from './globe';
-import { GoogleOutline } from './google-outline';
-import { Google } from './google';
-import { GridOutline } from './grid-outline';
-import { Grid } from './grid';
-import { HardDriveOutline } from './hard-drive-outline';
-import { HardDrive } from './hard-drive';
-import { HashOutline } from './hash-outline';
-import { Hash } from './hash';
-import { HeadphonesOutline } from './headphones-outline';
-import { Headphones } from './headphones';
-import { HeartOutline } from './heart-outline';
-import { Heart } from './heart';
-import { HomeOutline } from './home-outline';
-import { Home } from './home';
-import { Image2 } from './image-2';
-import { ImageOutline } from './image-outline';
-import { Image } from './image';
-import { InboxOutline } from './inbox-outline';
-import { Inbox } from './inbox';
-import { InfoOutline } from './info-outline';
-import { Info } from './info';
-import { KeypadOutline } from './keypad-outline';
-import { Keypad } from './keypad';
-import { LayersOutline } from './layers-outline';
-import { Layers } from './layers';
-import { LayoutOutline } from './layout-outline';
-import { Layout } from './layout';
-import { Link2Outline } from './link-2-outline';
-import { Link2 } from './link-2';
-import { LinkOutline } from './link-outline';
-import { Link } from './link';
-import { LinkedinOutline } from './linkedin-outline';
-import { Linkedin } from './linkedin';
-import { ListOutline } from './list-outline';
-import { List } from './list';
-import { LoaderOutline } from './loader-outline';
-import { LockOutline } from './lock-outline';
-import { Lock } from './lock';
-import { LogInOutline } from './log-in-outline';
-import { LogIn } from './log-in';
-import { LogOutOutline } from './log-out-outline';
-import { LogOut } from './log-out';
-import { MapOutline } from './map-outline';
-import { Map } from './map';
-import { MaximizeOutline } from './maximize-outline';
-import { Maximize } from './maximize';
-import { Menu2Outline } from './menu-2-outline';
-import { Menu2 } from './menu-2';
-import { MenuArrowOutline } from './menu-arrow-outline';
-import { MenuArrow } from './menu-arrow';
-import { MenuOutline } from './menu-outline';
-import { Menu } from './menu';
-import { MessageCircleOutline } from './message-circle-outline';
-import { MessageCircle } from './message-circle';
-import { MessageSquareOutline } from './message-square-outline';
-import { MessageSquare } from './message-square';
-import { MicOffOutline } from './mic-off-outline';
-import { MicOff } from './mic-off';
-import { MicOutline } from './mic-outline';
-import { Mic } from './mic';
-import { MinimizeOutline } from './minimize-outline';
-import { Minimize } from './minimize';
-import { MinusCircleOutline } from './minus-circle-outline';
-import { MinusCircle } from './minus-circle';
-import { MinusOutline } from './minus-outline';
-import { MinusSquareOutline } from './minus-square-outline';
-import { MinusSquare } from './minus-square';
-import { Minus } from './minus';
-import { MonitorOutline } from './monitor-outline';
-import { Monitor } from './monitor';
-import { MoonOutline } from './moon-outline';
-import { Moon } from './moon';
-import { MoreHorizontalOutline } from './more-horizontal-outline';
-import { MoreHorizontal } from './more-horizontal';
-import { MoreVerticalOutline } from './more-vertical-outline';
-import { MoreVertical } from './more-vertical';
-import { MoveOutline } from './move-outline';
-import { Move } from './move';
-import { MusicOutline } from './music-outline';
-import { Music } from './music';
-import { Navigation2Outline } from './navigation-2-outline';
-import { Navigation2 } from './navigation-2';
-import { NavigationOutline } from './navigation-outline';
-import { Navigation } from './navigation';
-import { NpmOutline } from './npm-outline';
-import { Npm } from './npm';
-import { Options2Outline } from './options-2-outline';
-import { Options2 } from './options-2';
-import { OptionsOutline } from './options-outline';
-import { Options } from './options';
-import { PantoneOutline } from './pantone-outline';
-import { Pantone } from './pantone';
-import { PaperPlaneOutline } from './paper-plane-outline';
-import { PaperPlane } from './paper-plane';
-import { PauseCircleOutline } from './pause-circle-outline';
-import { PauseCircle } from './pause-circle';
-import { PeopleOutline } from './people-outline';
-import { People } from './people';
-import { PercentOutline } from './percent-outline';
-import { Percent } from './percent';
-import { PersonAddOutline } from './person-add-outline';
-import { PersonAdd } from './person-add';
-import { PersonDeleteOutline } from './person-delete-outline';
-import { PersonDelete } from './person-delete';
-import { PersonDoneOutline } from './person-done-outline';
-import { PersonDone } from './person-done';
-import { PersonOutline } from './person-outline';
-import { PersonRemoveOutline } from './person-remove-outline';
-import { PersonRemove } from './person-remove';
-import { Person } from './person';
-import { PhoneCallOutline } from './phone-call-outline';
-import { PhoneCall } from './phone-call';
-import { PhoneMissedOutline } from './phone-missed-outline';
-import { PhoneMissed } from './phone-missed';
-import { PhoneOffOutline } from './phone-off-outline';
-import { PhoneOff } from './phone-off';
-import { PhoneOutline } from './phone-outline';
-import { Phone } from './phone';
-import { PieChart2 } from './pie-chart-2';
-import { PieChartOutline } from './pie-chart-outline';
-import { PieChart } from './pie-chart';
-import { PinOutline } from './pin-outline';
-import { Pin } from './pin';
-import { PlayCircleOutline } from './play-circle-outline';
-import { PlayCircle } from './play-circle';
-import { PlusCircleOutline } from './plus-circle-outline';
-import { PlusCircle } from './plus-circle';
-import { PlusOutline } from './plus-outline';
-import { PlusSquareOutline } from './plus-square-outline';
-import { PlusSquare } from './plus-square';
-import { Plus } from './plus';
-import { PowerOutline } from './power-outline';
-import { Power } from './power';
-import { PricetagsOutline } from './pricetags-outline';
-import { Pricetags } from './pricetags';
-import { PrinterOutline } from './printer-outline';
-import { Printer } from './printer';
-import { QuestionMarkCircleOutline } from './question-mark-circle-outline';
-import { QuestionMarkCircle } from './question-mark-circle';
-import { QuestionMarkOutline } from './question-mark-outline';
-import { QuestionMark } from './question-mark';
-import { RadioButtonOffOutline } from './radio-button-off-outline';
-import { RadioButtonOff } from './radio-button-off';
-import { RadioButtonOnOutline } from './radio-button-on-outline';
-import { RadioButtonOn } from './radio-button-on';
-import { RadioOutline } from './radio-outline';
-import { Radio } from './radio';
-import { RecordingOutline } from './recording-outline';
-import { Recording } from './recording';
-import { RefreshOutline } from './refresh-outline';
-import { Refresh } from './refresh';
-import { RepeatOutline } from './repeat-outline';
-import { Repeat } from './repeat';
-import { RewindLeftOutline } from './rewind-left-outline';
-import { RewindLeft } from './rewind-left';
-import { RewindRightOutline } from './rewind-right-outline';
-import { RewindRight } from './rewind-right';
-import { SaveOutline } from './save-outline';
-import { Save } from './save';
-import { ScissorsOutline } from './scissors-outline';
-import { Scissors } from './scissors';
-import { SearchOutline } from './search-outline';
-import { Search } from './search';
-import { Settings2Outline } from './settings-2-outline';
-import { Settings2 } from './settings-2';
-import { SettingsOutline } from './settings-outline';
-import { Settings } from './settings';
-import { ShakeOutline } from './shake-outline';
-import { Shake } from './shake';
-import { ShareOutline } from './share-outline';
-import { Share } from './share';
-import { ShieldOffOutline } from './shield-off-outline';
-import { ShieldOff } from './shield-off';
-import { ShieldOutline } from './shield-outline';
-import { Shield } from './shield';
-import { ShoppingBagOutline } from './shopping-bag-outline';
-import { ShoppingBag } from './shopping-bag';
-import { ShoppingCartOutline } from './shopping-cart-outline';
-import { ShoppingCart } from './shopping-cart';
-import { Shuffle2Outline } from './shuffle-2-outline';
-import { Shuffle2 } from './shuffle-2';
-import { ShuffleOutline } from './shuffle-outline';
-import { Shuffle } from './shuffle';
-import { SkipBackOutline } from './skip-back-outline';
-import { SkipBack } from './skip-back';
-import { SkipForwardOutline } from './skip-forward-outline';
-import { SkipForward } from './skip-forward';
-import { SlashOutline } from './slash-outline';
-import { Slash } from './slash';
-import { SmartphoneOutline } from './smartphone-outline';
-import { Smartphone } from './smartphone';
-import { SpeakerOutline } from './speaker-outline';
-import { Speaker } from './speaker';
-import { SquareOutline } from './square-outline';
-import { Square } from './square';
-import { StarOutline } from './star-outline';
-import { Star } from './star';
-import { StopCircleOutline } from './stop-circle-outline';
-import { StopCircle } from './stop-circle';
-import { SunOutline } from './sun-outline';
-import { Sun } from './sun';
-import { SwapOutline } from './swap-outline';
-import { Swap } from './swap';
-import { SyncOutline } from './sync-outline';
-import { Sync } from './sync';
-import { TextOutline } from './text-outline';
-import { Text } from './text';
-import { ThermometerMinusOutline } from './thermometer-minus-outline';
-import { ThermometerMinus } from './thermometer-minus';
-import { ThermometerOutline } from './thermometer-outline';
-import { ThermometerPlusOutline } from './thermometer-plus-outline';
-import { ThermometerPlus } from './thermometer-plus';
-import { Thermometer } from './thermometer';
-import { ToggleLeftOutline } from './toggle-left-outline';
-import { ToggleLeft } from './toggle-left';
-import { ToggleRightOutline } from './toggle-right-outline';
-import { ToggleRight } from './toggle-right';
-import { Trash2Outline } from './trash-2-outline';
-import { Trash2 } from './trash-2';
-import { TrashOutline } from './trash-outline';
-import { Trash } from './trash';
-import { TrendingDownOutline } from './trending-down-outline';
-import { TrendingDown } from './trending-down';
-import { TrendingUpOutline } from './trending-up-outline';
-import { TrendingUp } from './trending-up';
-import { TvOutline } from './tv-outline';
-import { Tv } from './tv';
-import { TwitterOutline } from './twitter-outline';
-import { Twitter } from './twitter';
-import { UmbrellaOutline } from './umbrella-outline';
-import { Umbrella } from './umbrella';
-import { UndoOutline } from './undo-outline';
-import { Undo } from './undo';
-import { UnlockOutline } from './unlock-outline';
-import { Unlock } from './unlock';
-import { UploadOutline } from './upload-outline';
-import { Upload } from './upload';
-import { VideoOffOutline } from './video-off-outline';
-import { VideoOff } from './video-off';
-import { VideoOutline } from './video-outline';
-import { Video } from './video';
-import { VolumeDownOutline } from './volume-down-outline';
-import { VolumeDown } from './volume-down';
-import { VolumeMuteOutline } from './volume-mute-outline';
-import { VolumeMute } from './volume-mute';
-import { VolumeOffOutline } from './volume-off-outline';
-import { VolumeOff } from './volume-off';
-import { VolumeUpOutline } from './volume-up-outline';
-import { VolumeUp } from './volume-up';
-import { WifiOffOutline } from './wifi-off-outline';
-import { WifiOff } from './wifi-off';
-import { WifiOutline } from './wifi-outline';
-import { Wifi } from './wifi';
-export default {
-  'activity-outline': ActivityOutline,
-  activity: Activity,
-  'alert-circle-outline': AlertCircleOutline,
-  'alert-circle': AlertCircle,
-  'alert-triangle-outline': AlertTriangleOutline,
-  'alert-triangle': AlertTriangle,
-  'archive-outline': ArchiveOutline,
-  archive: Archive,
-  'arrow-back-outline': ArrowBackOutline,
-  'arrow-back': ArrowBack,
-  'arrow-circle-down-outline': ArrowCircleDownOutline,
-  'arrow-circle-down': ArrowCircleDown,
-  'arrow-circle-left-outline': ArrowCircleLeftOutline,
-  'arrow-circle-left': ArrowCircleLeft,
-  'arrow-circle-right-outline': ArrowCircleRightOutline,
-  'arrow-circle-right': ArrowCircleRight,
-  'arrow-circle-up-outline': ArrowCircleUpOutline,
-  'arrow-circle-up': ArrowCircleUp,
-  'arrow-down-outline': ArrowDownOutline,
-  'arrow-down': ArrowDown,
-  'arrow-downward-outline': ArrowDownwardOutline,
-  'arrow-downward': ArrowDownward,
-  'arrow-forward-outline': ArrowForwardOutline,
-  'arrow-forward': ArrowForward,
-  'arrow-ios-back-outline': ArrowIosBackOutline,
-  'arrow-ios-back': ArrowIosBack,
-  'arrow-ios-downward-outline': ArrowIosDownwardOutline,
-  'arrow-ios-downward': ArrowIosDownward,
-  'arrow-ios-forward-outline': ArrowIosForwardOutline,
-  'arrow-ios-forward': ArrowIosForward,
-  'arrow-ios-upward-outline': ArrowIosUpwardOutline,
-  'arrow-ios-upward': ArrowIosUpward,
-  'arrow-left-outline': ArrowLeftOutline,
-  'arrow-left': ArrowLeft,
-  'arrow-right-outline': ArrowRightOutline,
-  'arrow-right': ArrowRight,
-  'arrow-up-outline': ArrowUpOutline,
-  'arrow-up': ArrowUp,
-  'arrow-upward-outline': ArrowUpwardOutline,
-  'arrow-upward': ArrowUpward,
-  'arrowhead-down-outline': ArrowheadDownOutline,
-  'arrowhead-down': ArrowheadDown,
-  'arrowhead-left-outline': ArrowheadLeftOutline,
-  'arrowhead-left': ArrowheadLeft,
-  'arrowhead-right-outline': ArrowheadRightOutline,
-  'arrowhead-right': ArrowheadRight,
-  'arrowhead-up-outline': ArrowheadUpOutline,
-  'arrowhead-up': ArrowheadUp,
-  'at-outline': AtOutline,
-  at: At,
-  'attach-2-outline': Attach2Outline,
-  'attach-2': Attach2,
-  'attach-outline': AttachOutline,
-  attach: Attach,
-  'award-outline': AwardOutline,
-  award: Award,
-  'backspace-outline': BackspaceOutline,
-  backspace: Backspace,
-  'bar-chart-2-outline': BarChart2Outline,
-  'bar-chart-2': BarChart2,
-  'bar-chart-outline': BarChartOutline,
-  'bar-chart': BarChart,
-  'battery-outline': BatteryOutline,
-  battery: Battery,
-  'behance-outline': BehanceOutline,
-  behance: Behance,
-  'bell-off-outline': BellOffOutline,
-  'bell-off': BellOff,
-  'bell-outline': BellOutline,
-  bell: Bell,
-  'bluetooth-outline': BluetoothOutline,
-  bluetooth: Bluetooth,
-  'book-open-outline': BookOpenOutline,
-  'book-open': BookOpen,
-  'book-outline': BookOutline,
-  book: Book,
-  'bookmark-outline': BookmarkOutline,
-  bookmark: Bookmark,
-  'briefcase-outline': BriefcaseOutline,
-  briefcase: Briefcase,
-  'browser-outline': BrowserOutline,
-  browser: Browser,
-  'brush-outline': BrushOutline,
-  brush: Brush,
-  'bulb-outline': BulbOutline,
-  bulb: Bulb,
-  'calendar-outline': CalendarOutline,
-  calendar: Calendar,
-  'camera-outline': CameraOutline,
-  camera: Camera,
-  'car-outline': CarOutline,
-  car: Car,
-  'cast-outline': CastOutline,
-  cast: Cast,
-  'charging-outline': ChargingOutline,
-  charging: Charging,
-  'checkmark-circle-2-outline': CheckmarkCircle2Outline,
-  'checkmark-circle-2': CheckmarkCircle2,
-  'checkmark-circle-outline': CheckmarkCircleOutline,
-  'checkmark-circle': CheckmarkCircle,
-  'checkmark-outline': CheckmarkOutline,
-  'checkmark-square-2-outline': CheckmarkSquare2Outline,
-  'checkmark-square-2': CheckmarkSquare2,
-  'checkmark-square-outline': CheckmarkSquareOutline,
-  'checkmark-square': CheckmarkSquare,
-  checkmark: Checkmark,
-  'chevron-down-outline': ChevronDownOutline,
-  'chevron-down': ChevronDown,
-  'chevron-left-outline': ChevronLeftOutline,
-  'chevron-left': ChevronLeft,
-  'chevron-right-outline': ChevronRightOutline,
-  'chevron-right': ChevronRight,
-  'chevron-up-outline': ChevronUpOutline,
-  'chevron-up': ChevronUp,
-  'clipboard-outline': ClipboardOutline,
-  clipboard: Clipboard,
-  'clock-outline': ClockOutline,
-  clock: Clock,
-  'close-circle-outline': CloseCircleOutline,
-  'close-circle': CloseCircle,
-  'close-outline': CloseOutline,
-  'close-square-outline': CloseSquareOutline,
-  'close-square': CloseSquare,
-  close: Close,
-  'cloud-download-outline': CloudDownloadOutline,
-  'cloud-download': CloudDownload,
-  'cloud-upload-outline': CloudUploadOutline,
-  'cloud-upload': CloudUpload,
-  'code-download-outline': CodeDownloadOutline,
-  'code-download': CodeDownload,
-  'code-outline': CodeOutline,
-  code: Code,
-  'collapse-outline': CollapseOutline,
-  collapse: Collapse,
-  'color-palette-outline': ColorPaletteOutline,
-  'color-palette': ColorPalette,
-  'color-picker-outline': ColorPickerOutline,
-  'color-picker': ColorPicker,
-  'compass-outline': CompassOutline,
-  compass: Compass,
-  'copy-outline': CopyOutline,
-  copy: Copy,
-  'corner-down-left-outline': CornerDownLeftOutline,
-  'corner-down-left': CornerDownLeft,
-  'corner-down-right-outline': CornerDownRightOutline,
-  'corner-down-right': CornerDownRight,
-  'corner-left-down-outline': CornerLeftDownOutline,
-  'corner-left-down': CornerLeftDown,
-  'corner-left-up-outline': CornerLeftUpOutline,
-  'corner-left-up': CornerLeftUp,
-  'corner-right-down-outline': CornerRightDownOutline,
-  'corner-right-down': CornerRightDown,
-  'corner-right-up-outline': CornerRightUpOutline,
-  'corner-right-up': CornerRightUp,
-  'corner-up-left-outline': CornerUpLeftOutline,
-  'corner-up-left': CornerUpLeft,
-  'corner-up-right-outline': CornerUpRightOutline,
-  'corner-up-right': CornerUpRight,
-  'credit-card-outline': CreditCardOutline,
-  'credit-card': CreditCard,
-  'crop-outline': CropOutline,
-  crop: Crop,
-  'cube-outline': CubeOutline,
-  cube: Cube,
-  'diagonal-arrow-left-down-outline': DiagonalArrowLeftDownOutline,
-  'diagonal-arrow-left-down': DiagonalArrowLeftDown,
-  'diagonal-arrow-left-up-outline': DiagonalArrowLeftUpOutline,
-  'diagonal-arrow-left-up': DiagonalArrowLeftUp,
-  'diagonal-arrow-right-down-outline': DiagonalArrowRightDownOutline,
-  'diagonal-arrow-right-down': DiagonalArrowRightDown,
-  'diagonal-arrow-right-up-outline': DiagonalArrowRightUpOutline,
-  'diagonal-arrow-right-up': DiagonalArrowRightUp,
-  'done-all-outline': DoneAllOutline,
-  'done-all': DoneAll,
-  'download-outline': DownloadOutline,
-  download: Download,
-  'droplet-off-outline': DropletOffOutline,
-  'droplet-off': DropletOff,
-  'droplet-outline': DropletOutline,
-  droplet: Droplet,
-  'edit-2-outline': Edit2Outline,
-  'edit-2': Edit2,
-  'edit-outline': EditOutline,
-  edit: Edit,
-  'email-outline': EmailOutline,
-  email: Email,
-  'expand-outline': ExpandOutline,
-  expand: Expand,
-  'external-link-outline': ExternalLinkOutline,
-  'external-link': ExternalLink,
-  'eye-off-2-outline': EyeOff2Outline,
-  'eye-off-2': EyeOff2,
-  'eye-off-outline': EyeOffOutline,
-  'eye-off': EyeOff,
-  'eye-outline': EyeOutline,
-  eye: Eye,
-  'facebook-outline': FacebookOutline,
-  facebook: Facebook,
-  'file-add-outline': FileAddOutline,
-  'file-add': FileAdd,
-  'file-outline': FileOutline,
-  'file-remove-outline': FileRemoveOutline,
-  'file-remove': FileRemove,
-  'file-text-outline': FileTextOutline,
-  'file-text': FileText,
-  file: File,
-  'film-outline': FilmOutline,
-  film: Film,
-  'flag-outline': FlagOutline,
-  flag: Flag,
-  'flash-off-outline': FlashOffOutline,
-  'flash-off': FlashOff,
-  'flash-outline': FlashOutline,
-  flash: Flash,
-  'flip-2-outline': Flip2Outline,
-  'flip-2': Flip2,
-  'flip-outline': FlipOutline,
-  flip: Flip,
-  'folder-add-outline': FolderAddOutline,
-  'folder-add': FolderAdd,
-  'folder-outline': FolderOutline,
-  'folder-remove-outline': FolderRemoveOutline,
-  'folder-remove': FolderRemove,
-  folder: Folder,
-  'funnel-outline': FunnelOutline,
-  funnel: Funnel,
-  'gift-outline': GiftOutline,
-  gift: Gift,
-  'github-outline': GithubOutline,
-  github: Github,
-  'globe-2-outline': Globe2Outline,
-  'globe-2': Globe2,
-  'globe-3': Globe3,
-  'globe-outline': GlobeOutline,
-  globe: Globe,
-  'google-outline': GoogleOutline,
-  google: Google,
-  'grid-outline': GridOutline,
-  grid: Grid,
-  'hard-drive-outline': HardDriveOutline,
-  'hard-drive': HardDrive,
-  'hash-outline': HashOutline,
-  hash: Hash,
-  'headphones-outline': HeadphonesOutline,
-  headphones: Headphones,
-  'heart-outline': HeartOutline,
-  heart: Heart,
-  'home-outline': HomeOutline,
-  home: Home,
-  'image-2': Image2,
-  'image-outline': ImageOutline,
-  image: Image,
-  'inbox-outline': InboxOutline,
-  inbox: Inbox,
-  'info-outline': InfoOutline,
-  info: Info,
-  'keypad-outline': KeypadOutline,
-  keypad: Keypad,
-  'layers-outline': LayersOutline,
-  layers: Layers,
-  'layout-outline': LayoutOutline,
-  layout: Layout,
-  'link-2-outline': Link2Outline,
-  'link-2': Link2,
-  'link-outline': LinkOutline,
-  link: Link,
-  'linkedin-outline': LinkedinOutline,
-  linkedin: Linkedin,
-  'list-outline': ListOutline,
-  list: List,
-  'loader-outline': LoaderOutline,
-  'lock-outline': LockOutline,
-  lock: Lock,
-  'log-in-outline': LogInOutline,
-  'log-in': LogIn,
-  'log-out-outline': LogOutOutline,
-  'log-out': LogOut,
-  'map-outline': MapOutline,
-  map: Map,
-  'maximize-outline': MaximizeOutline,
-  maximize: Maximize,
-  'menu-2-outline': Menu2Outline,
-  'menu-2': Menu2,
-  'menu-arrow-outline': MenuArrowOutline,
-  'menu-arrow': MenuArrow,
-  'menu-outline': MenuOutline,
-  menu: Menu,
-  'message-circle-outline': MessageCircleOutline,
-  'message-circle': MessageCircle,
-  'message-square-outline': MessageSquareOutline,
-  'message-square': MessageSquare,
-  'mic-off-outline': MicOffOutline,
-  'mic-off': MicOff,
-  'mic-outline': MicOutline,
-  mic: Mic,
-  'minimize-outline': MinimizeOutline,
-  minimize: Minimize,
-  'minus-circle-outline': MinusCircleOutline,
-  'minus-circle': MinusCircle,
-  'minus-outline': MinusOutline,
-  'minus-square-outline': MinusSquareOutline,
-  'minus-square': MinusSquare,
-  minus: Minus,
-  'monitor-outline': MonitorOutline,
-  monitor: Monitor,
-  'moon-outline': MoonOutline,
-  moon: Moon,
-  'more-horizontal-outline': MoreHorizontalOutline,
-  'more-horizontal': MoreHorizontal,
-  'more-vertical-outline': MoreVerticalOutline,
-  'more-vertical': MoreVertical,
-  'move-outline': MoveOutline,
-  move: Move,
-  'music-outline': MusicOutline,
-  music: Music,
-  'navigation-2-outline': Navigation2Outline,
-  'navigation-2': Navigation2,
-  'navigation-outline': NavigationOutline,
-  navigation: Navigation,
-  'npm-outline': NpmOutline,
-  npm: Npm,
-  'options-2-outline': Options2Outline,
-  'options-2': Options2,
-  'options-outline': OptionsOutline,
-  options: Options,
-  'pantone-outline': PantoneOutline,
-  pantone: Pantone,
-  'paper-plane-outline': PaperPlaneOutline,
-  'paper-plane': PaperPlane,
-  'pause-circle-outline': PauseCircleOutline,
-  'pause-circle': PauseCircle,
-  'people-outline': PeopleOutline,
-  people: People,
-  'percent-outline': PercentOutline,
-  percent: Percent,
-  'person-add-outline': PersonAddOutline,
-  'person-add': PersonAdd,
-  'person-delete-outline': PersonDeleteOutline,
-  'person-delete': PersonDelete,
-  'person-done-outline': PersonDoneOutline,
-  'person-done': PersonDone,
-  'person-outline': PersonOutline,
-  'person-remove-outline': PersonRemoveOutline,
-  'person-remove': PersonRemove,
-  person: Person,
-  'phone-call-outline': PhoneCallOutline,
-  'phone-call': PhoneCall,
-  'phone-missed-outline': PhoneMissedOutline,
-  'phone-missed': PhoneMissed,
-  'phone-off-outline': PhoneOffOutline,
-  'phone-off': PhoneOff,
-  'phone-outline': PhoneOutline,
-  phone: Phone,
-  'pie-chart-2': PieChart2,
-  'pie-chart-outline': PieChartOutline,
-  'pie-chart': PieChart,
-  'pin-outline': PinOutline,
-  pin: Pin,
-  'play-circle-outline': PlayCircleOutline,
-  'play-circle': PlayCircle,
-  'plus-circle-outline': PlusCircleOutline,
-  'plus-circle': PlusCircle,
-  'plus-outline': PlusOutline,
-  'plus-square-outline': PlusSquareOutline,
-  'plus-square': PlusSquare,
-  plus: Plus,
-  'power-outline': PowerOutline,
-  power: Power,
-  'pricetags-outline': PricetagsOutline,
-  pricetags: Pricetags,
-  'printer-outline': PrinterOutline,
-  printer: Printer,
-  'question-mark-circle-outline': QuestionMarkCircleOutline,
-  'question-mark-circle': QuestionMarkCircle,
-  'question-mark-outline': QuestionMarkOutline,
-  'question-mark': QuestionMark,
-  'radio-button-off-outline': RadioButtonOffOutline,
-  'radio-button-off': RadioButtonOff,
-  'radio-button-on-outline': RadioButtonOnOutline,
-  'radio-button-on': RadioButtonOn,
-  'radio-outline': RadioOutline,
-  radio: Radio,
-  'recording-outline': RecordingOutline,
-  recording: Recording,
-  'refresh-outline': RefreshOutline,
-  refresh: Refresh,
-  'repeat-outline': RepeatOutline,
-  repeat: Repeat,
-  'rewind-left-outline': RewindLeftOutline,
-  'rewind-left': RewindLeft,
-  'rewind-right-outline': RewindRightOutline,
-  'rewind-right': RewindRight,
-  'save-outline': SaveOutline,
-  save: Save,
-  'scissors-outline': ScissorsOutline,
-  scissors: Scissors,
-  'search-outline': SearchOutline,
-  search: Search,
-  'settings-2-outline': Settings2Outline,
-  'settings-2': Settings2,
-  'settings-outline': SettingsOutline,
-  settings: Settings,
-  'shake-outline': ShakeOutline,
-  shake: Shake,
-  'share-outline': ShareOutline,
-  share: Share,
-  'shield-off-outline': ShieldOffOutline,
-  'shield-off': ShieldOff,
-  'shield-outline': ShieldOutline,
-  shield: Shield,
-  'shopping-bag-outline': ShoppingBagOutline,
-  'shopping-bag': ShoppingBag,
-  'shopping-cart-outline': ShoppingCartOutline,
-  'shopping-cart': ShoppingCart,
-  'shuffle-2-outline': Shuffle2Outline,
-  'shuffle-2': Shuffle2,
-  'shuffle-outline': ShuffleOutline,
-  shuffle: Shuffle,
-  'skip-back-outline': SkipBackOutline,
-  'skip-back': SkipBack,
-  'skip-forward-outline': SkipForwardOutline,
-  'skip-forward': SkipForward,
-  'slash-outline': SlashOutline,
-  slash: Slash,
-  'smartphone-outline': SmartphoneOutline,
-  smartphone: Smartphone,
-  'speaker-outline': SpeakerOutline,
-  speaker: Speaker,
-  'square-outline': SquareOutline,
-  square: Square,
-  'star-outline': StarOutline,
-  star: Star,
-  'stop-circle-outline': StopCircleOutline,
-  'stop-circle': StopCircle,
-  'sun-outline': SunOutline,
-  sun: Sun,
-  'swap-outline': SwapOutline,
-  swap: Swap,
-  'sync-outline': SyncOutline,
-  sync: Sync,
-  'text-outline': TextOutline,
-  text: Text,
-  'thermometer-minus-outline': ThermometerMinusOutline,
-  'thermometer-minus': ThermometerMinus,
-  'thermometer-outline': ThermometerOutline,
-  'thermometer-plus-outline': ThermometerPlusOutline,
-  'thermometer-plus': ThermometerPlus,
-  thermometer: Thermometer,
-  'toggle-left-outline': ToggleLeftOutline,
-  'toggle-left': ToggleLeft,
-  'toggle-right-outline': ToggleRightOutline,
-  'toggle-right': ToggleRight,
-  'trash-2-outline': Trash2Outline,
-  'trash-2': Trash2,
-  'trash-outline': TrashOutline,
-  trash: Trash,
-  'trending-down-outline': TrendingDownOutline,
-  'trending-down': TrendingDown,
-  'trending-up-outline': TrendingUpOutline,
-  'trending-up': TrendingUp,
-  'tv-outline': TvOutline,
-  tv: Tv,
-  'twitter-outline': TwitterOutline,
-  twitter: Twitter,
-  'umbrella-outline': UmbrellaOutline,
-  umbrella: Umbrella,
-  'undo-outline': UndoOutline,
-  undo: Undo,
-  'unlock-outline': UnlockOutline,
-  unlock: Unlock,
-  'upload-outline': UploadOutline,
-  upload: Upload,
-  'video-off-outline': VideoOffOutline,
-  'video-off': VideoOff,
-  'video-outline': VideoOutline,
-  video: Video,
-  'volume-down-outline': VolumeDownOutline,
-  'volume-down': VolumeDown,
-  'volume-mute-outline': VolumeMuteOutline,
-  'volume-mute': VolumeMute,
-  'volume-off-outline': VolumeOffOutline,
-  'volume-off': VolumeOff,
-  'volume-up-outline': VolumeUpOutline,
-  'volume-up': VolumeUp,
-  'wifi-off-outline': WifiOffOutline,
-  'wifi-off': WifiOff,
-  'wifi-outline': WifiOutline,
-  wifi: Wifi,
+import React from 'react';
+import Svg from 'react-native-svg';
+
+export const findIconByName = (
+  name: string,
+): React.ReactElement<Svg.SvgProps> | undefined => {
+  switch (name) {
+    case 'activity-outline':
+      return require('./activity-outline').default;
+
+    case 'activity':
+      return require('./activity').default;
+
+    case 'alert-circle-outline':
+      return require('./alert-circle-outline').default;
+
+    case 'alert-circle':
+      return require('./alert-circle').default;
+
+    case 'alert-triangle-outline':
+      return require('./alert-triangle-outline').default;
+
+    case 'alert-triangle':
+      return require('./alert-triangle').default;
+
+    case 'archive-outline':
+      return require('./archive-outline').default;
+
+    case 'archive':
+      return require('./archive').default;
+
+    case 'arrow-back-outline':
+      return require('./arrow-back-outline').default;
+
+    case 'arrow-back':
+      return require('./arrow-back').default;
+
+    case 'arrow-circle-down-outline':
+      return require('./arrow-circle-down-outline').default;
+
+    case 'arrow-circle-down':
+      return require('./arrow-circle-down').default;
+
+    case 'arrow-circle-left-outline':
+      return require('./arrow-circle-left-outline').default;
+
+    case 'arrow-circle-left':
+      return require('./arrow-circle-left').default;
+
+    case 'arrow-circle-right-outline':
+      return require('./arrow-circle-right-outline').default;
+
+    case 'arrow-circle-right':
+      return require('./arrow-circle-right').default;
+
+    case 'arrow-circle-up-outline':
+      return require('./arrow-circle-up-outline').default;
+
+    case 'arrow-circle-up':
+      return require('./arrow-circle-up').default;
+
+    case 'arrow-down-outline':
+      return require('./arrow-down-outline').default;
+
+    case 'arrow-down':
+      return require('./arrow-down').default;
+
+    case 'arrow-downward-outline':
+      return require('./arrow-downward-outline').default;
+
+    case 'arrow-downward':
+      return require('./arrow-downward').default;
+
+    case 'arrow-forward-outline':
+      return require('./arrow-forward-outline').default;
+
+    case 'arrow-forward':
+      return require('./arrow-forward').default;
+
+    case 'arrow-ios-back-outline':
+      return require('./arrow-ios-back-outline').default;
+
+    case 'arrow-ios-back':
+      return require('./arrow-ios-back').default;
+
+    case 'arrow-ios-downward-outline':
+      return require('./arrow-ios-downward-outline').default;
+
+    case 'arrow-ios-downward':
+      return require('./arrow-ios-downward').default;
+
+    case 'arrow-ios-forward-outline':
+      return require('./arrow-ios-forward-outline').default;
+
+    case 'arrow-ios-forward':
+      return require('./arrow-ios-forward').default;
+
+    case 'arrow-ios-upward-outline':
+      return require('./arrow-ios-upward-outline').default;
+
+    case 'arrow-ios-upward':
+      return require('./arrow-ios-upward').default;
+
+    case 'arrow-left-outline':
+      return require('./arrow-left-outline').default;
+
+    case 'arrow-left':
+      return require('./arrow-left').default;
+
+    case 'arrow-right-outline':
+      return require('./arrow-right-outline').default;
+
+    case 'arrow-right':
+      return require('./arrow-right').default;
+
+    case 'arrow-up-outline':
+      return require('./arrow-up-outline').default;
+
+    case 'arrow-up':
+      return require('./arrow-up').default;
+
+    case 'arrow-upward-outline':
+      return require('./arrow-upward-outline').default;
+
+    case 'arrow-upward':
+      return require('./arrow-upward').default;
+
+    case 'arrowhead-down-outline':
+      return require('./arrowhead-down-outline').default;
+
+    case 'arrowhead-down':
+      return require('./arrowhead-down').default;
+
+    case 'arrowhead-left-outline':
+      return require('./arrowhead-left-outline').default;
+
+    case 'arrowhead-left':
+      return require('./arrowhead-left').default;
+
+    case 'arrowhead-right-outline':
+      return require('./arrowhead-right-outline').default;
+
+    case 'arrowhead-right':
+      return require('./arrowhead-right').default;
+
+    case 'arrowhead-up-outline':
+      return require('./arrowhead-up-outline').default;
+
+    case 'arrowhead-up':
+      return require('./arrowhead-up').default;
+
+    case 'at-outline':
+      return require('./at-outline').default;
+
+    case 'at':
+      return require('./at').default;
+
+    case 'attach-2-outline':
+      return require('./attach-2-outline').default;
+
+    case 'attach-2':
+      return require('./attach-2').default;
+
+    case 'attach-outline':
+      return require('./attach-outline').default;
+
+    case 'attach':
+      return require('./attach').default;
+
+    case 'award-outline':
+      return require('./award-outline').default;
+
+    case 'award':
+      return require('./award').default;
+
+    case 'backspace-outline':
+      return require('./backspace-outline').default;
+
+    case 'backspace':
+      return require('./backspace').default;
+
+    case 'bar-chart-2-outline':
+      return require('./bar-chart-2-outline').default;
+
+    case 'bar-chart-2':
+      return require('./bar-chart-2').default;
+
+    case 'bar-chart-outline':
+      return require('./bar-chart-outline').default;
+
+    case 'bar-chart':
+      return require('./bar-chart').default;
+
+    case 'battery-outline':
+      return require('./battery-outline').default;
+
+    case 'battery':
+      return require('./battery').default;
+
+    case 'behance-outline':
+      return require('./behance-outline').default;
+
+    case 'behance':
+      return require('./behance').default;
+
+    case 'bell-off-outline':
+      return require('./bell-off-outline').default;
+
+    case 'bell-off':
+      return require('./bell-off').default;
+
+    case 'bell-outline':
+      return require('./bell-outline').default;
+
+    case 'bell':
+      return require('./bell').default;
+
+    case 'bluetooth-outline':
+      return require('./bluetooth-outline').default;
+
+    case 'bluetooth':
+      return require('./bluetooth').default;
+
+    case 'book-open-outline':
+      return require('./book-open-outline').default;
+
+    case 'book-open':
+      return require('./book-open').default;
+
+    case 'book-outline':
+      return require('./book-outline').default;
+
+    case 'book':
+      return require('./book').default;
+
+    case 'bookmark-outline':
+      return require('./bookmark-outline').default;
+
+    case 'bookmark':
+      return require('./bookmark').default;
+
+    case 'briefcase-outline':
+      return require('./briefcase-outline').default;
+
+    case 'briefcase':
+      return require('./briefcase').default;
+
+    case 'browser-outline':
+      return require('./browser-outline').default;
+
+    case 'browser':
+      return require('./browser').default;
+
+    case 'brush-outline':
+      return require('./brush-outline').default;
+
+    case 'brush':
+      return require('./brush').default;
+
+    case 'bulb-outline':
+      return require('./bulb-outline').default;
+
+    case 'bulb':
+      return require('./bulb').default;
+
+    case 'calendar-outline':
+      return require('./calendar-outline').default;
+
+    case 'calendar':
+      return require('./calendar').default;
+
+    case 'camera-outline':
+      return require('./camera-outline').default;
+
+    case 'camera':
+      return require('./camera').default;
+
+    case 'car-outline':
+      return require('./car-outline').default;
+
+    case 'car':
+      return require('./car').default;
+
+    case 'cast-outline':
+      return require('./cast-outline').default;
+
+    case 'cast':
+      return require('./cast').default;
+
+    case 'charging-outline':
+      return require('./charging-outline').default;
+
+    case 'charging':
+      return require('./charging').default;
+
+    case 'checkmark-circle-2-outline':
+      return require('./checkmark-circle-2-outline').default;
+
+    case 'checkmark-circle-2':
+      return require('./checkmark-circle-2').default;
+
+    case 'checkmark-circle-outline':
+      return require('./checkmark-circle-outline').default;
+
+    case 'checkmark-circle':
+      return require('./checkmark-circle').default;
+
+    case 'checkmark-outline':
+      return require('./checkmark-outline').default;
+
+    case 'checkmark-square-2-outline':
+      return require('./checkmark-square-2-outline').default;
+
+    case 'checkmark-square-2':
+      return require('./checkmark-square-2').default;
+
+    case 'checkmark-square-outline':
+      return require('./checkmark-square-outline').default;
+
+    case 'checkmark-square':
+      return require('./checkmark-square').default;
+
+    case 'checkmark':
+      return require('./checkmark').default;
+
+    case 'chevron-down-outline':
+      return require('./chevron-down-outline').default;
+
+    case 'chevron-down':
+      return require('./chevron-down').default;
+
+    case 'chevron-left-outline':
+      return require('./chevron-left-outline').default;
+
+    case 'chevron-left':
+      return require('./chevron-left').default;
+
+    case 'chevron-right-outline':
+      return require('./chevron-right-outline').default;
+
+    case 'chevron-right':
+      return require('./chevron-right').default;
+
+    case 'chevron-up-outline':
+      return require('./chevron-up-outline').default;
+
+    case 'chevron-up':
+      return require('./chevron-up').default;
+
+    case 'clipboard-outline':
+      return require('./clipboard-outline').default;
+
+    case 'clipboard':
+      return require('./clipboard').default;
+
+    case 'clock-outline':
+      return require('./clock-outline').default;
+
+    case 'clock':
+      return require('./clock').default;
+
+    case 'close-circle-outline':
+      return require('./close-circle-outline').default;
+
+    case 'close-circle':
+      return require('./close-circle').default;
+
+    case 'close-outline':
+      return require('./close-outline').default;
+
+    case 'close-square-outline':
+      return require('./close-square-outline').default;
+
+    case 'close-square':
+      return require('./close-square').default;
+
+    case 'close':
+      return require('./close').default;
+
+    case 'cloud-download-outline':
+      return require('./cloud-download-outline').default;
+
+    case 'cloud-download':
+      return require('./cloud-download').default;
+
+    case 'cloud-upload-outline':
+      return require('./cloud-upload-outline').default;
+
+    case 'cloud-upload':
+      return require('./cloud-upload').default;
+
+    case 'code-download-outline':
+      return require('./code-download-outline').default;
+
+    case 'code-download':
+      return require('./code-download').default;
+
+    case 'code-outline':
+      return require('./code-outline').default;
+
+    case 'code':
+      return require('./code').default;
+
+    case 'collapse-outline':
+      return require('./collapse-outline').default;
+
+    case 'collapse':
+      return require('./collapse').default;
+
+    case 'color-palette-outline':
+      return require('./color-palette-outline').default;
+
+    case 'color-palette':
+      return require('./color-palette').default;
+
+    case 'color-picker-outline':
+      return require('./color-picker-outline').default;
+
+    case 'color-picker':
+      return require('./color-picker').default;
+
+    case 'compass-outline':
+      return require('./compass-outline').default;
+
+    case 'compass':
+      return require('./compass').default;
+
+    case 'copy-outline':
+      return require('./copy-outline').default;
+
+    case 'copy':
+      return require('./copy').default;
+
+    case 'corner-down-left-outline':
+      return require('./corner-down-left-outline').default;
+
+    case 'corner-down-left':
+      return require('./corner-down-left').default;
+
+    case 'corner-down-right-outline':
+      return require('./corner-down-right-outline').default;
+
+    case 'corner-down-right':
+      return require('./corner-down-right').default;
+
+    case 'corner-left-down-outline':
+      return require('./corner-left-down-outline').default;
+
+    case 'corner-left-down':
+      return require('./corner-left-down').default;
+
+    case 'corner-left-up-outline':
+      return require('./corner-left-up-outline').default;
+
+    case 'corner-left-up':
+      return require('./corner-left-up').default;
+
+    case 'corner-right-down-outline':
+      return require('./corner-right-down-outline').default;
+
+    case 'corner-right-down':
+      return require('./corner-right-down').default;
+
+    case 'corner-right-up-outline':
+      return require('./corner-right-up-outline').default;
+
+    case 'corner-right-up':
+      return require('./corner-right-up').default;
+
+    case 'corner-up-left-outline':
+      return require('./corner-up-left-outline').default;
+
+    case 'corner-up-left':
+      return require('./corner-up-left').default;
+
+    case 'corner-up-right-outline':
+      return require('./corner-up-right-outline').default;
+
+    case 'corner-up-right':
+      return require('./corner-up-right').default;
+
+    case 'credit-card-outline':
+      return require('./credit-card-outline').default;
+
+    case 'credit-card':
+      return require('./credit-card').default;
+
+    case 'crop-outline':
+      return require('./crop-outline').default;
+
+    case 'crop':
+      return require('./crop').default;
+
+    case 'cube-outline':
+      return require('./cube-outline').default;
+
+    case 'cube':
+      return require('./cube').default;
+
+    case 'diagonal-arrow-left-down-outline':
+      return require('./diagonal-arrow-left-down-outline').default;
+
+    case 'diagonal-arrow-left-down':
+      return require('./diagonal-arrow-left-down').default;
+
+    case 'diagonal-arrow-left-up-outline':
+      return require('./diagonal-arrow-left-up-outline').default;
+
+    case 'diagonal-arrow-left-up':
+      return require('./diagonal-arrow-left-up').default;
+
+    case 'diagonal-arrow-right-down-outline':
+      return require('./diagonal-arrow-right-down-outline').default;
+
+    case 'diagonal-arrow-right-down':
+      return require('./diagonal-arrow-right-down').default;
+
+    case 'diagonal-arrow-right-up-outline':
+      return require('./diagonal-arrow-right-up-outline').default;
+
+    case 'diagonal-arrow-right-up':
+      return require('./diagonal-arrow-right-up').default;
+
+    case 'done-all-outline':
+      return require('./done-all-outline').default;
+
+    case 'done-all':
+      return require('./done-all').default;
+
+    case 'download-outline':
+      return require('./download-outline').default;
+
+    case 'download':
+      return require('./download').default;
+
+    case 'droplet-off-outline':
+      return require('./droplet-off-outline').default;
+
+    case 'droplet-off':
+      return require('./droplet-off').default;
+
+    case 'droplet-outline':
+      return require('./droplet-outline').default;
+
+    case 'droplet':
+      return require('./droplet').default;
+
+    case 'edit-2-outline':
+      return require('./edit-2-outline').default;
+
+    case 'edit-2':
+      return require('./edit-2').default;
+
+    case 'edit-outline':
+      return require('./edit-outline').default;
+
+    case 'edit':
+      return require('./edit').default;
+
+    case 'email-outline':
+      return require('./email-outline').default;
+
+    case 'email':
+      return require('./email').default;
+
+    case 'expand-outline':
+      return require('./expand-outline').default;
+
+    case 'expand':
+      return require('./expand').default;
+
+    case 'external-link-outline':
+      return require('./external-link-outline').default;
+
+    case 'external-link':
+      return require('./external-link').default;
+
+    case 'eye-off-2-outline':
+      return require('./eye-off-2-outline').default;
+
+    case 'eye-off-2':
+      return require('./eye-off-2').default;
+
+    case 'eye-off-outline':
+      return require('./eye-off-outline').default;
+
+    case 'eye-off':
+      return require('./eye-off').default;
+
+    case 'eye-outline':
+      return require('./eye-outline').default;
+
+    case 'eye':
+      return require('./eye').default;
+
+    case 'facebook-outline':
+      return require('./facebook-outline').default;
+
+    case 'facebook':
+      return require('./facebook').default;
+
+    case 'file-add-outline':
+      return require('./file-add-outline').default;
+
+    case 'file-add':
+      return require('./file-add').default;
+
+    case 'file-outline':
+      return require('./file-outline').default;
+
+    case 'file-remove-outline':
+      return require('./file-remove-outline').default;
+
+    case 'file-remove':
+      return require('./file-remove').default;
+
+    case 'file-text-outline':
+      return require('./file-text-outline').default;
+
+    case 'file-text':
+      return require('./file-text').default;
+
+    case 'file':
+      return require('./file').default;
+
+    case 'film-outline':
+      return require('./film-outline').default;
+
+    case 'film':
+      return require('./film').default;
+
+    case 'flag-outline':
+      return require('./flag-outline').default;
+
+    case 'flag':
+      return require('./flag').default;
+
+    case 'flash-off-outline':
+      return require('./flash-off-outline').default;
+
+    case 'flash-off':
+      return require('./flash-off').default;
+
+    case 'flash-outline':
+      return require('./flash-outline').default;
+
+    case 'flash':
+      return require('./flash').default;
+
+    case 'flip-2-outline':
+      return require('./flip-2-outline').default;
+
+    case 'flip-2':
+      return require('./flip-2').default;
+
+    case 'flip-outline':
+      return require('./flip-outline').default;
+
+    case 'flip':
+      return require('./flip').default;
+
+    case 'folder-add-outline':
+      return require('./folder-add-outline').default;
+
+    case 'folder-add':
+      return require('./folder-add').default;
+
+    case 'folder-outline':
+      return require('./folder-outline').default;
+
+    case 'folder-remove-outline':
+      return require('./folder-remove-outline').default;
+
+    case 'folder-remove':
+      return require('./folder-remove').default;
+
+    case 'folder':
+      return require('./folder').default;
+
+    case 'funnel-outline':
+      return require('./funnel-outline').default;
+
+    case 'funnel':
+      return require('./funnel').default;
+
+    case 'gift-outline':
+      return require('./gift-outline').default;
+
+    case 'gift':
+      return require('./gift').default;
+
+    case 'github-outline':
+      return require('./github-outline').default;
+
+    case 'github':
+      return require('./github').default;
+
+    case 'globe-2-outline':
+      return require('./globe-2-outline').default;
+
+    case 'globe-2':
+      return require('./globe-2').default;
+
+    case 'globe-3':
+      return require('./globe-3').default;
+
+    case 'globe-outline':
+      return require('./globe-outline').default;
+
+    case 'globe':
+      return require('./globe').default;
+
+    case 'google-outline':
+      return require('./google-outline').default;
+
+    case 'google':
+      return require('./google').default;
+
+    case 'grid-outline':
+      return require('./grid-outline').default;
+
+    case 'grid':
+      return require('./grid').default;
+
+    case 'hard-drive-outline':
+      return require('./hard-drive-outline').default;
+
+    case 'hard-drive':
+      return require('./hard-drive').default;
+
+    case 'hash-outline':
+      return require('./hash-outline').default;
+
+    case 'hash':
+      return require('./hash').default;
+
+    case 'headphones-outline':
+      return require('./headphones-outline').default;
+
+    case 'headphones':
+      return require('./headphones').default;
+
+    case 'heart-outline':
+      return require('./heart-outline').default;
+
+    case 'heart':
+      return require('./heart').default;
+
+    case 'home-outline':
+      return require('./home-outline').default;
+
+    case 'home':
+      return require('./home').default;
+
+    case 'image-2':
+      return require('./image-2').default;
+
+    case 'image-outline':
+      return require('./image-outline').default;
+
+    case 'image':
+      return require('./image').default;
+
+    case 'inbox-outline':
+      return require('./inbox-outline').default;
+
+    case 'inbox':
+      return require('./inbox').default;
+
+    case 'info-outline':
+      return require('./info-outline').default;
+
+    case 'info':
+      return require('./info').default;
+
+    case 'keypad-outline':
+      return require('./keypad-outline').default;
+
+    case 'keypad':
+      return require('./keypad').default;
+
+    case 'layers-outline':
+      return require('./layers-outline').default;
+
+    case 'layers':
+      return require('./layers').default;
+
+    case 'layout-outline':
+      return require('./layout-outline').default;
+
+    case 'layout':
+      return require('./layout').default;
+
+    case 'link-2-outline':
+      return require('./link-2-outline').default;
+
+    case 'link-2':
+      return require('./link-2').default;
+
+    case 'link-outline':
+      return require('./link-outline').default;
+
+    case 'link':
+      return require('./link').default;
+
+    case 'linkedin-outline':
+      return require('./linkedin-outline').default;
+
+    case 'linkedin':
+      return require('./linkedin').default;
+
+    case 'list-outline':
+      return require('./list-outline').default;
+
+    case 'list':
+      return require('./list').default;
+
+    case 'loader-outline':
+      return require('./loader-outline').default;
+
+    case 'lock-outline':
+      return require('./lock-outline').default;
+
+    case 'lock':
+      return require('./lock').default;
+
+    case 'log-in-outline':
+      return require('./log-in-outline').default;
+
+    case 'log-in':
+      return require('./log-in').default;
+
+    case 'log-out-outline':
+      return require('./log-out-outline').default;
+
+    case 'log-out':
+      return require('./log-out').default;
+
+    case 'map-outline':
+      return require('./map-outline').default;
+
+    case 'map':
+      return require('./map').default;
+
+    case 'maximize-outline':
+      return require('./maximize-outline').default;
+
+    case 'maximize':
+      return require('./maximize').default;
+
+    case 'menu-2-outline':
+      return require('./menu-2-outline').default;
+
+    case 'menu-2':
+      return require('./menu-2').default;
+
+    case 'menu-arrow-outline':
+      return require('./menu-arrow-outline').default;
+
+    case 'menu-arrow':
+      return require('./menu-arrow').default;
+
+    case 'menu-outline':
+      return require('./menu-outline').default;
+
+    case 'menu':
+      return require('./menu').default;
+
+    case 'message-circle-outline':
+      return require('./message-circle-outline').default;
+
+    case 'message-circle':
+      return require('./message-circle').default;
+
+    case 'message-square-outline':
+      return require('./message-square-outline').default;
+
+    case 'message-square':
+      return require('./message-square').default;
+
+    case 'mic-off-outline':
+      return require('./mic-off-outline').default;
+
+    case 'mic-off':
+      return require('./mic-off').default;
+
+    case 'mic-outline':
+      return require('./mic-outline').default;
+
+    case 'mic':
+      return require('./mic').default;
+
+    case 'minimize-outline':
+      return require('./minimize-outline').default;
+
+    case 'minimize':
+      return require('./minimize').default;
+
+    case 'minus-circle-outline':
+      return require('./minus-circle-outline').default;
+
+    case 'minus-circle':
+      return require('./minus-circle').default;
+
+    case 'minus-outline':
+      return require('./minus-outline').default;
+
+    case 'minus-square-outline':
+      return require('./minus-square-outline').default;
+
+    case 'minus-square':
+      return require('./minus-square').default;
+
+    case 'minus':
+      return require('./minus').default;
+
+    case 'monitor-outline':
+      return require('./monitor-outline').default;
+
+    case 'monitor':
+      return require('./monitor').default;
+
+    case 'moon-outline':
+      return require('./moon-outline').default;
+
+    case 'moon':
+      return require('./moon').default;
+
+    case 'more-horizontal-outline':
+      return require('./more-horizontal-outline').default;
+
+    case 'more-horizontal':
+      return require('./more-horizontal').default;
+
+    case 'more-vertical-outline':
+      return require('./more-vertical-outline').default;
+
+    case 'more-vertical':
+      return require('./more-vertical').default;
+
+    case 'move-outline':
+      return require('./move-outline').default;
+
+    case 'move':
+      return require('./move').default;
+
+    case 'music-outline':
+      return require('./music-outline').default;
+
+    case 'music':
+      return require('./music').default;
+
+    case 'navigation-2-outline':
+      return require('./navigation-2-outline').default;
+
+    case 'navigation-2':
+      return require('./navigation-2').default;
+
+    case 'navigation-outline':
+      return require('./navigation-outline').default;
+
+    case 'navigation':
+      return require('./navigation').default;
+
+    case 'npm-outline':
+      return require('./npm-outline').default;
+
+    case 'npm':
+      return require('./npm').default;
+
+    case 'options-2-outline':
+      return require('./options-2-outline').default;
+
+    case 'options-2':
+      return require('./options-2').default;
+
+    case 'options-outline':
+      return require('./options-outline').default;
+
+    case 'options':
+      return require('./options').default;
+
+    case 'pantone-outline':
+      return require('./pantone-outline').default;
+
+    case 'pantone':
+      return require('./pantone').default;
+
+    case 'paper-plane-outline':
+      return require('./paper-plane-outline').default;
+
+    case 'paper-plane':
+      return require('./paper-plane').default;
+
+    case 'pause-circle-outline':
+      return require('./pause-circle-outline').default;
+
+    case 'pause-circle':
+      return require('./pause-circle').default;
+
+    case 'people-outline':
+      return require('./people-outline').default;
+
+    case 'people':
+      return require('./people').default;
+
+    case 'percent-outline':
+      return require('./percent-outline').default;
+
+    case 'percent':
+      return require('./percent').default;
+
+    case 'person-add-outline':
+      return require('./person-add-outline').default;
+
+    case 'person-add':
+      return require('./person-add').default;
+
+    case 'person-delete-outline':
+      return require('./person-delete-outline').default;
+
+    case 'person-delete':
+      return require('./person-delete').default;
+
+    case 'person-done-outline':
+      return require('./person-done-outline').default;
+
+    case 'person-done':
+      return require('./person-done').default;
+
+    case 'person-outline':
+      return require('./person-outline').default;
+
+    case 'person-remove-outline':
+      return require('./person-remove-outline').default;
+
+    case 'person-remove':
+      return require('./person-remove').default;
+
+    case 'person':
+      return require('./person').default;
+
+    case 'phone-call-outline':
+      return require('./phone-call-outline').default;
+
+    case 'phone-call':
+      return require('./phone-call').default;
+
+    case 'phone-missed-outline':
+      return require('./phone-missed-outline').default;
+
+    case 'phone-missed':
+      return require('./phone-missed').default;
+
+    case 'phone-off-outline':
+      return require('./phone-off-outline').default;
+
+    case 'phone-off':
+      return require('./phone-off').default;
+
+    case 'phone-outline':
+      return require('./phone-outline').default;
+
+    case 'phone':
+      return require('./phone').default;
+
+    case 'pie-chart-2':
+      return require('./pie-chart-2').default;
+
+    case 'pie-chart-outline':
+      return require('./pie-chart-outline').default;
+
+    case 'pie-chart':
+      return require('./pie-chart').default;
+
+    case 'pin-outline':
+      return require('./pin-outline').default;
+
+    case 'pin':
+      return require('./pin').default;
+
+    case 'play-circle-outline':
+      return require('./play-circle-outline').default;
+
+    case 'play-circle':
+      return require('./play-circle').default;
+
+    case 'plus-circle-outline':
+      return require('./plus-circle-outline').default;
+
+    case 'plus-circle':
+      return require('./plus-circle').default;
+
+    case 'plus-outline':
+      return require('./plus-outline').default;
+
+    case 'plus-square-outline':
+      return require('./plus-square-outline').default;
+
+    case 'plus-square':
+      return require('./plus-square').default;
+
+    case 'plus':
+      return require('./plus').default;
+
+    case 'power-outline':
+      return require('./power-outline').default;
+
+    case 'power':
+      return require('./power').default;
+
+    case 'pricetags-outline':
+      return require('./pricetags-outline').default;
+
+    case 'pricetags':
+      return require('./pricetags').default;
+
+    case 'printer-outline':
+      return require('./printer-outline').default;
+
+    case 'printer':
+      return require('./printer').default;
+
+    case 'question-mark-circle-outline':
+      return require('./question-mark-circle-outline').default;
+
+    case 'question-mark-circle':
+      return require('./question-mark-circle').default;
+
+    case 'question-mark-outline':
+      return require('./question-mark-outline').default;
+
+    case 'question-mark':
+      return require('./question-mark').default;
+
+    case 'radio-button-off-outline':
+      return require('./radio-button-off-outline').default;
+
+    case 'radio-button-off':
+      return require('./radio-button-off').default;
+
+    case 'radio-button-on-outline':
+      return require('./radio-button-on-outline').default;
+
+    case 'radio-button-on':
+      return require('./radio-button-on').default;
+
+    case 'radio-outline':
+      return require('./radio-outline').default;
+
+    case 'radio':
+      return require('./radio').default;
+
+    case 'recording-outline':
+      return require('./recording-outline').default;
+
+    case 'recording':
+      return require('./recording').default;
+
+    case 'refresh-outline':
+      return require('./refresh-outline').default;
+
+    case 'refresh':
+      return require('./refresh').default;
+
+    case 'repeat-outline':
+      return require('./repeat-outline').default;
+
+    case 'repeat':
+      return require('./repeat').default;
+
+    case 'rewind-left-outline':
+      return require('./rewind-left-outline').default;
+
+    case 'rewind-left':
+      return require('./rewind-left').default;
+
+    case 'rewind-right-outline':
+      return require('./rewind-right-outline').default;
+
+    case 'rewind-right':
+      return require('./rewind-right').default;
+
+    case 'save-outline':
+      return require('./save-outline').default;
+
+    case 'save':
+      return require('./save').default;
+
+    case 'scissors-outline':
+      return require('./scissors-outline').default;
+
+    case 'scissors':
+      return require('./scissors').default;
+
+    case 'search-outline':
+      return require('./search-outline').default;
+
+    case 'search':
+      return require('./search').default;
+
+    case 'settings-2-outline':
+      return require('./settings-2-outline').default;
+
+    case 'settings-2':
+      return require('./settings-2').default;
+
+    case 'settings-outline':
+      return require('./settings-outline').default;
+
+    case 'settings':
+      return require('./settings').default;
+
+    case 'shake-outline':
+      return require('./shake-outline').default;
+
+    case 'shake':
+      return require('./shake').default;
+
+    case 'share-outline':
+      return require('./share-outline').default;
+
+    case 'share':
+      return require('./share').default;
+
+    case 'shield-off-outline':
+      return require('./shield-off-outline').default;
+
+    case 'shield-off':
+      return require('./shield-off').default;
+
+    case 'shield-outline':
+      return require('./shield-outline').default;
+
+    case 'shield':
+      return require('./shield').default;
+
+    case 'shopping-bag-outline':
+      return require('./shopping-bag-outline').default;
+
+    case 'shopping-bag':
+      return require('./shopping-bag').default;
+
+    case 'shopping-cart-outline':
+      return require('./shopping-cart-outline').default;
+
+    case 'shopping-cart':
+      return require('./shopping-cart').default;
+
+    case 'shuffle-2-outline':
+      return require('./shuffle-2-outline').default;
+
+    case 'shuffle-2':
+      return require('./shuffle-2').default;
+
+    case 'shuffle-outline':
+      return require('./shuffle-outline').default;
+
+    case 'shuffle':
+      return require('./shuffle').default;
+
+    case 'skip-back-outline':
+      return require('./skip-back-outline').default;
+
+    case 'skip-back':
+      return require('./skip-back').default;
+
+    case 'skip-forward-outline':
+      return require('./skip-forward-outline').default;
+
+    case 'skip-forward':
+      return require('./skip-forward').default;
+
+    case 'slash-outline':
+      return require('./slash-outline').default;
+
+    case 'slash':
+      return require('./slash').default;
+
+    case 'smartphone-outline':
+      return require('./smartphone-outline').default;
+
+    case 'smartphone':
+      return require('./smartphone').default;
+
+    case 'speaker-outline':
+      return require('./speaker-outline').default;
+
+    case 'speaker':
+      return require('./speaker').default;
+
+    case 'square-outline':
+      return require('./square-outline').default;
+
+    case 'square':
+      return require('./square').default;
+
+    case 'star-outline':
+      return require('./star-outline').default;
+
+    case 'star':
+      return require('./star').default;
+
+    case 'stop-circle-outline':
+      return require('./stop-circle-outline').default;
+
+    case 'stop-circle':
+      return require('./stop-circle').default;
+
+    case 'sun-outline':
+      return require('./sun-outline').default;
+
+    case 'sun':
+      return require('./sun').default;
+
+    case 'swap-outline':
+      return require('./swap-outline').default;
+
+    case 'swap':
+      return require('./swap').default;
+
+    case 'sync-outline':
+      return require('./sync-outline').default;
+
+    case 'sync':
+      return require('./sync').default;
+
+    case 'text-outline':
+      return require('./text-outline').default;
+
+    case 'text':
+      return require('./text').default;
+
+    case 'thermometer-minus-outline':
+      return require('./thermometer-minus-outline').default;
+
+    case 'thermometer-minus':
+      return require('./thermometer-minus').default;
+
+    case 'thermometer-outline':
+      return require('./thermometer-outline').default;
+
+    case 'thermometer-plus-outline':
+      return require('./thermometer-plus-outline').default;
+
+    case 'thermometer-plus':
+      return require('./thermometer-plus').default;
+
+    case 'thermometer':
+      return require('./thermometer').default;
+
+    case 'toggle-left-outline':
+      return require('./toggle-left-outline').default;
+
+    case 'toggle-left':
+      return require('./toggle-left').default;
+
+    case 'toggle-right-outline':
+      return require('./toggle-right-outline').default;
+
+    case 'toggle-right':
+      return require('./toggle-right').default;
+
+    case 'trash-2-outline':
+      return require('./trash-2-outline').default;
+
+    case 'trash-2':
+      return require('./trash-2').default;
+
+    case 'trash-outline':
+      return require('./trash-outline').default;
+
+    case 'trash':
+      return require('./trash').default;
+
+    case 'trending-down-outline':
+      return require('./trending-down-outline').default;
+
+    case 'trending-down':
+      return require('./trending-down').default;
+
+    case 'trending-up-outline':
+      return require('./trending-up-outline').default;
+
+    case 'trending-up':
+      return require('./trending-up').default;
+
+    case 'tv-outline':
+      return require('./tv-outline').default;
+
+    case 'tv':
+      return require('./tv').default;
+
+    case 'twitter-outline':
+      return require('./twitter-outline').default;
+
+    case 'twitter':
+      return require('./twitter').default;
+
+    case 'umbrella-outline':
+      return require('./umbrella-outline').default;
+
+    case 'umbrella':
+      return require('./umbrella').default;
+
+    case 'undo-outline':
+      return require('./undo-outline').default;
+
+    case 'undo':
+      return require('./undo').default;
+
+    case 'unlock-outline':
+      return require('./unlock-outline').default;
+
+    case 'unlock':
+      return require('./unlock').default;
+
+    case 'upload-outline':
+      return require('./upload-outline').default;
+
+    case 'upload':
+      return require('./upload').default;
+
+    case 'video-off-outline':
+      return require('./video-off-outline').default;
+
+    case 'video-off':
+      return require('./video-off').default;
+
+    case 'video-outline':
+      return require('./video-outline').default;
+
+    case 'video':
+      return require('./video').default;
+
+    case 'volume-down-outline':
+      return require('./volume-down-outline').default;
+
+    case 'volume-down':
+      return require('./volume-down').default;
+
+    case 'volume-mute-outline':
+      return require('./volume-mute-outline').default;
+
+    case 'volume-mute':
+      return require('./volume-mute').default;
+
+    case 'volume-off-outline':
+      return require('./volume-off-outline').default;
+
+    case 'volume-off':
+      return require('./volume-off').default;
+
+    case 'volume-up-outline':
+      return require('./volume-up-outline').default;
+
+    case 'volume-up':
+      return require('./volume-up').default;
+
+    case 'wifi-off-outline':
+      return require('./wifi-off-outline').default;
+
+    case 'wifi-off':
+      return require('./wifi-off').default;
+
+    case 'wifi-outline':
+      return require('./wifi-outline').default;
+
+    case 'wifi':
+      return require('./wifi').default;
+  }
 };

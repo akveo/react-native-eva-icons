@@ -1,12 +1,18 @@
 import fs from 'fs';
 import path from 'path';
-import stringifyObject from 'stringify-object';
-import {
-  createReactNativeElementName,
-  getFileNameFromPath,
-} from './common';
+import { getFileNameFromPath } from './common';
 
-type IconsRegistry = { [name: string]: any };
+const OUTPUT_START: string = [
+  'import React from \'react\';',
+  'import Svg from \'react-native-svg\';',
+  `export const findIconByName = (name: string): React.ReactElement<Svg.SvgProps> | undefined => {`,
+  `switch(name) {`,
+].join('\n');
+
+const OUTPUT_END: string = [
+  `}`,
+  `};`,
+].join('\n');
 
 main();
 
@@ -21,30 +27,20 @@ function generateIndexForSourceDir(sourceDir: string) {
 
   const iconFiles: string[] = fs.readdirSync(sourceDir);
 
-  const exportObject: IconsRegistry = iconFiles.reduce((acc: IconsRegistry, file: string): IconsRegistry => {
+  fs.appendFileSync(indexPath, OUTPUT_START);
+
+  iconFiles.forEach((file: string) => {
     const sourceFilePath: string = path.resolve(sourceDir, file);
     const fileName: string = getFileNameFromPath(sourceFilePath);
 
-    const elementName: string = createReactNativeElementName(fileName);
+    const caseStatement: string = createCaseStatementForElement(fileName);
 
-    const exportStatement: string = createImportStatementForElement(elementName, fileName);
-
-    fs.appendFileSync(indexPath, exportStatement);
-
-    return { ...acc, [fileName]: elementName };
-  }, {});
-
-  const output: string = stringifyObject(exportObject, {
-    transform: transformOutputValue,
+    fs.appendFileSync(indexPath, `\n${caseStatement}\n`);
   });
 
-  fs.appendFileSync(indexPath, `export default ${output};`);
+  fs.appendFileSync(indexPath, OUTPUT_END);
 }
 
-function createImportStatementForElement(elementName: string, fileName: string): string {
-  return `import { ${elementName} } from './${fileName}';\n`;
-}
-
-function transformOutputValue(val: any[] | object, i: number | string | symbol, value: string): string {
-  return value.replace(new RegExp('\'', 'g'), '');
+function createCaseStatementForElement(fileName: string): string {
+  return `case '${fileName}': return require('./${fileName}').default;`;
 }

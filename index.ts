@@ -1,6 +1,6 @@
 import React from 'react';
 import Svg from 'react-native-svg';
-import Icons from './src';
+import { findIconByName } from './src';
 
 interface Props extends Svg.SvgProps {
   name: string;
@@ -9,5 +9,5 @@ interface Props extends Svg.SvgProps {
 export const Icon = (props?: Props): React.ReactElement<Props> => {
   const { name, ...svgProps } = props;
 
-  return React.createElement(Icons[name], svgProps);
+  return React.createElement(findIconByName(name), svgProps);
 };

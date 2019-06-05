@@ -1,10 +1,7 @@
 import React from 'react';
-
 import Svg from 'react-native-svg';
 
-export const UploadOutline = (
-  props?: Svg.SvgProps,
-): React.ReactElement<Svg.SvgProps> => (
+export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
   <Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <Svg.G data-name='Layer 2'>
       <Svg.G data-name='upload'>
@@ -41,8 +38,9 @@ export const UploadOutline = (
           ry='1'
           transform='rotate(90 5 6)'
         />
-        <Svg.Path d='M8 14a1 1 0 0 1-.8-.4 1 1 0 0 1 .2-1.4l4-3a1 1 0 0 1 1.18 0l4 2.82a1 1 0 0 1 .24 1.39 1 1 0 0 1-1.4.24L12 11.24 8.6 13.8a1 1 0 0 1-.6.2z' />
-        <Svg.Path d='M12 21a1 1 0 0 1-1-1v-8a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1z' />
+        <Svg.Path
+          d='M8 14a1 1 0 0 1-.8-.4 1 1 0 0 1 .2-1.4l4-3a1 1 0 0 1 1.18 0l4 2.82a1 1 0 0 1 .24 1.39 1 1 0 0 1-1.4.24L12 11.24 8.6 13.8a1 1 0 0 1-.6.2z'/>
+        <Svg.Path d='M12 21a1 1 0 0 1-1-1v-8a1 1 0 0 1 2 0v8a1 1 0 0 1-1 1z'/>
       </Svg.G>
     </Svg.G>
   </Svg>

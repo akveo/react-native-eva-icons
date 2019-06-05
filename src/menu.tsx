@@ -1,10 +1,7 @@
 import React from 'react';
-
 import Svg from 'react-native-svg';
 
-export const Menu = (
-  props?: Svg.SvgProps,
-): React.ReactElement<Svg.SvgProps> => (
+export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
   <Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <Svg.G data-name='Layer 2'>
       <Svg.G data-name='menu'>
@@ -14,9 +11,9 @@ export const Menu = (
           transform='rotate(180 12 12)'
           opacity='0'
         />
-        <Svg.Rect x='3' y='11' width='18' height='2' rx='.95' ry='.95' />
-        <Svg.Rect x='3' y='16' width='18' height='2' rx='.95' ry='.95' />
-        <Svg.Rect x='3' y='6' width='18' height='2' rx='.95' ry='.95' />
+        <Svg.Rect x='3' y='11' width='18' height='2' rx='.95' ry='.95'/>
+        <Svg.Rect x='3' y='16' width='18' height='2' rx='.95' ry='.95'/>
+        <Svg.Rect x='3' y='6' width='18' height='2' rx='.95' ry='.95'/>
       </Svg.G>
     </Svg.G>
   </Svg>
