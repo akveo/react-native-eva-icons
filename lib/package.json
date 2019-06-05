@@ -1,0 +1,24 @@
+{
+  "name": "react-native-eva-icons",
+  "version": "1.0.0",
+  "description": "Eva Icons for React Native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artyorsh/react-native-eva-icons.git"
+  },
+  "keywords": [
+    "react-native",
+    "eva-icons",
+    "svg"
+  ],
+  "author": "artyorsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artyorsh/react-native-eva-icons/issues"
+  },
+  "homepage": "https://github.com/artyorsh/react-native-eva-icons#readme",
+  "peerDependencies": {
+    "react": "16.5.0",
+    "react-native-svg": "^9.4.0"
+  }
+}

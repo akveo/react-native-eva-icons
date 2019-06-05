@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/tsc-out",
     "baseUrl": "./",
+    "outDir": "./dist/tsc-out",
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "jsx": "react-native",
@@ -17,5 +18,10 @@
     "typeRoots": [
       "./node_modules/@types"
     ]
-  }
+  },
+  "include": [
+    "./lib/**/*.ts",
+    "./lib/**/*.tsx",
+    "./lib/**/*.json"
+  ]
 }

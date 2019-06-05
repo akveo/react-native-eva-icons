@@ -3,7 +3,7 @@ import Svg from 'react-native-svg';
 
 export const findIconByName = (
   name: string,
-): React.ReactElement<Svg.SvgProps> | undefined => {
+): React.FunctionComponent<Svg.SvgProps> | undefined => {
   switch (name) {
     case 'activity-outline':
       return require('./activity-outline').default;
