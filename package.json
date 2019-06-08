@@ -14,7 +14,10 @@
     "gen:fill": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/fill/svg ./lib/src",
     "gen:outline": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/outline/svg ./lib/src",
     "gen:index": "ts-node ./scripts/generateIndex.ts ./lib/src",
-    "gen:all": "npm run gen:fill && npm run gen:outline && npm run gen:index"
+    "gen:all": "npm run gen:fill && npm run gen:outline && npm run gen:index",
+    "release:prepare": "npm run clean:build && npm run build",
+    "release": "npm run clean:build && npm run build",
+    "publish": "npm run release:prepare && npm publish --access=public ./dist/tsc-out"
   },
   "repository": {
     "type": "git",
