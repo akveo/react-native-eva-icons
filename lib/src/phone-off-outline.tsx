@@ -1,8 +1,8 @@
-import React from 'react';
-import Svg from 'react-native-svg';
+import * as React from 'react';
+import * as Svg from 'react-native-svg';
 
 export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
-  <Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <Svg.Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <Svg.G data-name='Layer 2'>
       <Svg.G data-name='phone-off'>
         <Svg.Rect width='24' height='24' opacity='0'/>
@@ -14,5 +14,5 @@ export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
           d='M21.94 16.64a4.34 4.34 0 0 0-.19-.73 1 1 0 0 0-.72-.65l-6-1.37a1 1 0 0 0-.92.26c-.14.13-.15.14-.8 1.38a10.88 10.88 0 0 1-1.41-.8l-1.43 1.43a11.52 11.52 0 0 0 2.94 1.56c.84.34 1.17-.29 1.62-1.16l.29-.55L20 17.07v.33a2.61 2.61 0 0 1-2.6 2.6 13.29 13.29 0 0 1-8-2.7l-1.46 1.43A15.33 15.33 0 0 0 17.4 22a4.6 4.6 0 0 0 4.6-4.6 4.77 4.77 0 0 0-.06-.76z'/>
       </Svg.G>
     </Svg.G>
-  </Svg>
+  </Svg.Svg>
 );

@@ -1,8 +1,8 @@
-import React from 'react';
-import Svg from 'react-native-svg';
+import * as React from 'react';
+import * as Svg from 'react-native-svg';
 
 export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
-  <Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <Svg.Svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
     <Svg.G data-name='Layer 2'>
       <Svg.G data-name='flip-in'>
         <Svg.Rect
@@ -17,5 +17,5 @@ export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (
           d='M14.29 5.79a1 1 0 0 0 1.42 1.42L17 5.91v12a1.56 1.56 0 0 1-1.53 1.59H13a1 1 0 0 0 0 2h2.47A3.56 3.56 0 0 0 19 17.91v-12l1.29 1.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-3-3a1 1 0 0 0-1.42 0z'/>
       </Svg.G>
     </Svg.G>
-  </Svg>
+  </Svg.Svg>
 );

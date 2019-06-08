@@ -6,10 +6,10 @@ interface ReplacementMap {
   [source: string]: string;
 }
 
-const ROOT_TAG: string = 'Svg';
+const ROOT_TAG: string = 'Svg.Svg';
 
 const ELEMENT_REPLACE_MAP: ReplacementMap = {
-  svg: 'Svg',
+  svg: 'Svg.Svg',
   rect: 'Svg.Rect',
   circle: 'Svg.Circle',
   ellipse: 'Svg.Ellipse',
@@ -66,8 +66,8 @@ function createReactNativeSvgSource(filePath: string): string {
 
 function createReactNativeElementSource(svg: string): string {
   return [
-    'import React from \'react\';',
-    'import Svg from \'react-native-svg\';',
+    'import * as React from \'react\';',
+    'import * as Svg from \'react-native-svg\';',
     `export default (props?: Svg.SvgProps): React.ReactElement<Svg.SvgProps> => (`,
     svg,
     ');',

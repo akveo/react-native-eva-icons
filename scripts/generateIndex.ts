@@ -3,9 +3,9 @@ import path from 'path';
 import { getFileNameFromPath } from './common';
 
 const OUTPUT_START: string = [
-  'import React from \'react\';',
-  'import Svg from \'react-native-svg\';',
-  `export const findIconByName = (name: string): React.ReactElement<Svg.SvgProps> | undefined => {`,
+  'import * as React from \'react\';',
+  'import * as Svg from \'react-native-svg\';',
+  `export const findIconByName = (name: string): React.ComponentType<Svg.SvgProps> | undefined => {`,
   `switch(name) {`,
 ].join('\n');
 

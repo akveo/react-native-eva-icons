@@ -1,9 +1,9 @@
-import React from 'react';
-import Svg from 'react-native-svg';
+import * as React from 'react';
+import * as Svg from 'react-native-svg';
 
 export const findIconByName = (
   name: string,
-): React.FunctionComponent<Svg.SvgProps> | undefined => {
+): React.ComponentType<Svg.SvgProps> | undefined => {
   switch (name) {
     case 'activity-outline':
       return require('./activity-outline').default;
