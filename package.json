@@ -1,6 +1,6 @@
 {
   "name": "react-native-eva-icons",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Eva Icons for React Native",
   "scripts": {
     "start": "npm run gen:prepare && npm run gen:all && npm run lint:all",
@@ -29,7 +29,7 @@
     "svg"
   ],
   "author": "artyorsh",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/artyorsh/react-native-eva-icons/issues"
   },
