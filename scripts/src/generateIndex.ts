@@ -14,15 +14,8 @@ const OUTPUT_END: string = [
   `};`,
 ].join('\n');
 
-main();
 
-function main() {
-  const { [0]: sourceDir } = process.argv.splice(2);
-
-  generateIndexForSourceDir(sourceDir);
-}
-
-function generateIndexForSourceDir(sourceDir: string) {
+export function generateIndexForSourceDir(sourceDir: string) {
   const indexPath: string = path.resolve(sourceDir, 'index.ts');
 
   const iconFiles: string[] = fs.readdirSync(sourceDir);

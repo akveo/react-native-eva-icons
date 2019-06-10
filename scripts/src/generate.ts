@@ -32,16 +32,7 @@ const ELEMENT_REPLACE_MAP: ReplacementMap = {
   pattern: 'Svg.Pattern',
 };
 
-main();
-
-function main() {
-  const { [0]: sourceDir, [1]: destDir } = process.argv.splice(2);
-
-  generateIconsForSourceDir(sourceDir, destDir);
-
-}
-
-function generateIconsForSourceDir(sourceDir: string, destDir: string) {
+export function generateIconsForSourceDir(sourceDir: string, destDir: string) {
   const iconFiles: string[] = fs.readdirSync(sourceDir);
 
   iconFiles.forEach((file: string) => {
