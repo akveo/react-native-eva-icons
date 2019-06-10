@@ -18,6 +18,8 @@ if [[ -z "$TRAVIS" ]]; then
   exit 1
 fi
 
-if [[ "${MODE}" =~ test ]]; then
+if [[ "${MODE}" =~ lint ]]; then
+  npm run ci:lint
+elif [[ "${MODE}" =~ test ]]; then
   npm run ci:test
 fi
