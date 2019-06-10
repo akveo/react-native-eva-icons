@@ -1,4 +1,4 @@
-# react-native-eva-icons [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />][link:eva][![Build Status][badge:travis-ci]][link:travis-ci] [![Coverage Status][badge:coveralls]][link:coveralls]
+# react-native-eva-icons [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />][link:eva] [![Build Status][badge:travis-ci]][link:travis-ci] [![Coverage Status][badge:coveralls]][link:coveralls]
 
 ❤️ Clean and powerful [**Eva Icons**][link:eva-icons] implementation for **React Native** based on [react-native-svg][link:react-native-svg] elements.
 
