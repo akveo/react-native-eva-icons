@@ -20,6 +20,12 @@ export const GithubIcon = () => (
 );
 ```
 
+You can also use icons one by one, just import them using PascalCase:
+
+```tsx
+import GithubIcon from 'react-native-eva-icons/icons/Github';
+```
+
 ## Customization
 
 React Native Eva Icons are built with  **react-native-svg** elements. All of the components can accept [the same properties as SVG elements][link:react-native-svg:props].

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getFileNameFromPath } from './common';
+import { pascal } from 'change-case';
 
 interface ReplacementMap {
   [source: string]: string;
@@ -51,7 +52,7 @@ function generateIconsForSourceDir(sourceDir: string, destDir: string) {
   iconFiles.forEach((file: string) => {
     const sourceFilePath: string = path.resolve(sourceDir, file);
 
-    const fileName: string = getFileNameFromPath(sourceFilePath);
+    const fileName: string = pascal(getFileNameFromPath(sourceFilePath));
     const destFilePath: string = path.resolve(destDir, `${fileName}.tsx`);
 
     const reactNativeSvgSource: string = createReactNativeSvgSource(sourceFilePath);
