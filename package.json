@@ -8,7 +8,7 @@
     "clean:build": "rimraf ./dist",
     "clean:lib": "rimraf ./lib/src",
     "lint:tslint": "tslint -c ./tslint.json ./lib/src/**/*.{ts,tsx} --fix",
-    "lint:prettier": "prettier ./lib/src/**/*.{ts,tsx} --write",
+    "lint:prettier": "prettier ./lib/src/**/*.{ts,tsx} --write --single-quote --jsx-single-quote",
     "lint:all": "npm run lint:prettier && npm run lint:tslint",
     "gen:prepare": "mkdir ./lib/src",
     "gen:fill": "ts-node ./scripts/generate.ts ./node_modules/eva-icons/fill/svg ./lib/src",

@@ -32,6 +32,10 @@ const ELEMENT_REPLACE_MAP: ReplacementMap = {
   pattern: 'Svg.Pattern',
 };
 
+const ATTRIBUTES_TO_REMOVE: string[] = [
+  'xmlns',
+];
+
 main();
 
 function main() {
@@ -77,12 +81,20 @@ function createReactNativeElementSource(svg: string): string {
 function createReactNativeSvgElementFromSource(source: string): string {
   const withReplacedElements: string = replaceSourceSvgWithMap(source, ELEMENT_REPLACE_MAP);
 
-  return assignPropsToSourceElement(withReplacedElements);
+  const cleanedFromUnnecessaryAttributes: string = removeUnnecessaryAttributes(withReplacedElements, ATTRIBUTES_TO_REMOVE);
+
+  return assignPropsToSourceElement(cleanedFromUnnecessaryAttributes);
 }
 
 function replaceSourceSvgWithMap(source: string, map: ReplacementMap): string {
   return Object.keys(map).reduce((result: string, element: string): string => {
     return replaceElementWithReactNativeSvgElement(result, element);
+  }, source);
+}
+
+function removeUnnecessaryAttributes(source: string, attributes: string[]): string {
+  return Object.values(attributes).reduce((result: string, attribute: string): string => {
+    return result.replace(new RegExp(`${attribute}=["'].*?["']`, 'gm'), '');
   }, source);
 }
 
