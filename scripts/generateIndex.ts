@@ -27,6 +27,7 @@ function generateIndexForSourceDir(sourceDir: string) {
 
   const iconFiles: string[] = fs.readdirSync(sourceDir);
 
+  fs.truncateSync(indexPath);
   fs.appendFileSync(indexPath, OUTPUT_START);
 
   iconFiles.forEach((file: string) => {
