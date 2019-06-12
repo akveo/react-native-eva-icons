@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getFileNameFromPath } from './common';
+import { pascalCase, paramCase } from 'change-case';
 
 const OUTPUT_START: string = [
   'import * as React from \'react\';',
@@ -20,6 +21,7 @@ export function generateIndexForSourceDir(sourceDir: string) {
 
   const iconFiles: string[] = fs.readdirSync(sourceDir);
 
+  fs.truncateSync(indexPath);
   fs.appendFileSync(indexPath, OUTPUT_START);
 
   iconFiles.forEach((file: string) => {
@@ -35,5 +37,5 @@ export function generateIndexForSourceDir(sourceDir: string) {
 }
 
 function createCaseStatementForElement(fileName: string): string {
-  return `case '${fileName}': return require('./${fileName}').default;`;
+  return `case '${paramCase(fileName)}': return require('./${pascalCase(fileName)}').default;`;
 }

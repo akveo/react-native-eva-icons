@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { getFileNameFromPath } from './common';
+import { pascal } from 'change-case';
 
 interface ReplacementMap {
   [source: string]: string;
@@ -32,13 +33,17 @@ const ELEMENT_REPLACE_MAP: ReplacementMap = {
   pattern: 'Svg.Pattern',
 };
 
+const ATTRIBUTES_TO_REMOVE: string[] = [
+  'xmlns',
+];
+
 export function generateIconsForSourceDir(sourceDir: string, destDir: string) {
   const iconFiles: string[] = fs.readdirSync(sourceDir);
 
   iconFiles.forEach((file: string) => {
     const sourceFilePath: string = path.resolve(sourceDir, file);
 
-    const fileName: string = getFileNameFromPath(sourceFilePath);
+    const fileName: string = pascal(getFileNameFromPath(sourceFilePath));
     const destFilePath: string = path.resolve(destDir, `${fileName}.tsx`);
 
     const reactNativeSvgSource: string = createReactNativeSvgSource(sourceFilePath);
@@ -68,12 +73,20 @@ function createReactNativeElementSource(svg: string): string {
 function createReactNativeSvgElementFromSource(source: string): string {
   const withReplacedElements: string = replaceSourceSvgWithMap(source, ELEMENT_REPLACE_MAP);
 
-  return assignPropsToSourceElement(withReplacedElements);
+  const cleanedFromUnnecessaryAttributes: string = removeUnnecessaryAttributes(withReplacedElements, ATTRIBUTES_TO_REMOVE);
+
+  return assignPropsToSourceElement(cleanedFromUnnecessaryAttributes);
 }
 
 function replaceSourceSvgWithMap(source: string, map: ReplacementMap): string {
   return Object.keys(map).reduce((result: string, element: string): string => {
     return replaceElementWithReactNativeSvgElement(result, element);
+  }, source);
+}
+
+function removeUnnecessaryAttributes(source: string, attributes: string[]): string {
+  return Object.values(attributes).reduce((result: string, attribute: string): string => {
+    return result.replace(new RegExp(`${attribute}=["'].*?["']`, 'gm'), '');
   }, source);
 }
 
