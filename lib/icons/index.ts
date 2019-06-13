@@ -1,7 +1,8 @@
 import * as React from 'react';
 import * as Svg from 'react-native-svg';
+
 export const findIconByName = (
-  name: string
+  name: string,
 ): React.ComponentType<Svg.SvgProps> | undefined => {
   switch (name) {
     case 'activity':
@@ -76,30 +77,6 @@ export const findIconByName = (
     case 'arrow-forward-outline':
       return require('./ArrowForwardOutline').default;
 
-    case 'arrowhead-down':
-      return require('./ArrowheadDown').default;
-
-    case 'arrowhead-down-outline':
-      return require('./ArrowheadDownOutline').default;
-
-    case 'arrowhead-left':
-      return require('./ArrowheadLeft').default;
-
-    case 'arrowhead-left-outline':
-      return require('./ArrowheadLeftOutline').default;
-
-    case 'arrowhead-right':
-      return require('./ArrowheadRight').default;
-
-    case 'arrowhead-right-outline':
-      return require('./ArrowheadRightOutline').default;
-
-    case 'arrowhead-up':
-      return require('./ArrowheadUp').default;
-
-    case 'arrowhead-up-outline':
-      return require('./ArrowheadUpOutline').default;
-
     case 'arrow-ios-back':
       return require('./ArrowIosBack').default;
 
@@ -147,6 +124,30 @@ export const findIconByName = (
 
     case 'arrow-upward-outline':
       return require('./ArrowUpwardOutline').default;
+
+    case 'arrowhead-down':
+      return require('./ArrowheadDown').default;
+
+    case 'arrowhead-down-outline':
+      return require('./ArrowheadDownOutline').default;
+
+    case 'arrowhead-left':
+      return require('./ArrowheadLeft').default;
+
+    case 'arrowhead-left-outline':
+      return require('./ArrowheadLeftOutline').default;
+
+    case 'arrowhead-right':
+      return require('./ArrowheadRight').default;
+
+    case 'arrowhead-right-outline':
+      return require('./ArrowheadRightOutline').default;
+
+    case 'arrowhead-up':
+      return require('./ArrowheadUp').default;
+
+    case 'arrowhead-up-outline':
+      return require('./ArrowheadUpOutline').default;
 
     case 'at':
       return require('./At').default;
@@ -223,12 +224,6 @@ export const findIconByName = (
     case 'book':
       return require('./Book').default;
 
-    case 'bookmark':
-      return require('./Bookmark').default;
-
-    case 'bookmark-outline':
-      return require('./BookmarkOutline').default;
-
     case 'book-open':
       return require('./BookOpen').default;
 
@@ -237,6 +232,12 @@ export const findIconByName = (
 
     case 'book-outline':
       return require('./BookOutline').default;
+
+    case 'bookmark':
+      return require('./Bookmark').default;
+
+    case 'bookmark-outline':
+      return require('./BookmarkOutline').default;
 
     case 'briefcase':
       return require('./Briefcase').default;
@@ -766,9 +767,6 @@ export const findIconByName = (
     case 'inbox-outline':
       return require('./InboxOutline').default;
 
-    case 'index':
-      return require('./Index').default;
-
     case 'info':
       return require('./Info').default;
 
@@ -796,12 +794,6 @@ export const findIconByName = (
     case 'link':
       return require('./Link').default;
 
-    case 'linkedin':
-      return require('./Linkedin').default;
-
-    case 'linkedin-outline':
-      return require('./LinkedinOutline').default;
-
     case 'link-outline':
       return require('./LinkOutline').default;
 
@@ -810,6 +802,12 @@ export const findIconByName = (
 
     case 'link-2-outline':
       return require('./Link_2Outline').default;
+
+    case 'linkedin':
+      return require('./Linkedin').default;
+
+    case 'linkedin-outline':
+      return require('./LinkedinOutline').default;
 
     case 'list':
       return require('./List').default;
