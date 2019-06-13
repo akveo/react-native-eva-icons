@@ -10,20 +10,24 @@ npm i react-native-eva-icons
 
 This framework assumes you have already installed **react-native-svg**, but if not - you should [install it][link:react-native-svg:install] too.
 
-## Usage
+## General Usage
 
-```tsx
+```jsx
 import { Icon } from 'react-native-eva-icons';
 
 export const GithubIcon = () => (
-  <Icon name='github'/>
+  <Icon name='github' width={48} height={48}/>
 );
 ```
 
-You can also use icons one by one, just import them using PascalCase:
+## Direct Usage
 
-```tsx
+```jsx
 import GithubIcon from 'react-native-eva-icons/icons/Github';
+
+export const GithubIcon = () => (
+  <GithubIcon width={48} height={48}/>
+);
 ```
 
 ## Customization
