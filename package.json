@@ -20,6 +20,7 @@
     "test": "jest",
     "ci:install": "npm ci",
     "ci:lint": "npm run lint",
+    "ci:build": "npm run build",
     "ci:test": "npm t -- --ci --coverage && cat ./dist/jest/coverage/lcov.info | coveralls"
   },
   "repository": {
