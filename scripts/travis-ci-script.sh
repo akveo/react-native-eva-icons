@@ -20,6 +20,8 @@ fi
 
 if [[ "${MODE}" =~ lint ]]; then
   npm run ci:lint
+elif [[ "${MODE}" =~ build ]]; then
+  npm run ci:test
 elif [[ "${MODE}" =~ test ]]; then
   npm run ci:test
 fi
