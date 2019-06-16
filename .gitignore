@@ -10,5 +10,6 @@ local.properties
 node_modules/
 npm-debug.log
 
-# dist
+# generated
 dist
+lib/icons
