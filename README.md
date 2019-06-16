@@ -44,6 +44,11 @@ export const GithubIcon = () => (
 );
 ```
 
+## Where is icons source code?
+
+React Native Eva Icons sources are generated with [ts-node scripts](./scripts/ts-node), so there is no need to track them in default branch of the repo. But if you don't trust CI and want to review generated sources, take a look at [bundle branch][link:build-branch].
+
+[link:build-branch]: https://github.com/artyorsh/react-native-eva-icons/tree/bundle/v1.0.0-beta.1
 [link:eva-icons]: https://github.com/akveo/eva-icons
 [link:react-native-svg]: https://github.com/react-native-community/react-native-svg
 [link:react-native-svg:install]: https://github.com/react-native-community/react-native-svg#installation
