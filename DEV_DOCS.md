@@ -34,6 +34,13 @@ Located in [./lib/icons](./lib/icons). In master branch generated source code is
 
 ### Generate Icons
 
-Run `npm run clean:lib && npm start`. This will cleanup generated sources and replace it with a new one.
+Run `npm run clean:lib && npm run generate`. This will cleanup generated sources and replace it with a new one.
 
 ### Creating a Playground Demo
+
+If you're working on a feature which can affect UI please create a short demo on it in a playground app. To do that, simply create React component demonstrating this feature in ./playground/showcase dir.
+
+Before running an app make sure you have generated icons in a ./lib dir so application can resolve it.
+
+To run a playground application use `npm start`.
+
