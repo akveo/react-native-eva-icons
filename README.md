@@ -10,7 +10,9 @@ npm i react-native-eva-icons
 
 This framework assumes you have already installed **react-native-svg**, but if not - you should [install it][link:react-native-svg:install] too.
 
-## General Usage
+## Usage
+
+Icons can be used by it's name using only `Icon` component.
 
 ```jsx
 import { Icon } from 'react-native-eva-icons';
@@ -20,7 +22,7 @@ export const GithubIcon = () => (
 );
 ```
 
-## Direct Usage
+You can also use a direct imports.
 
 ```jsx
 import GithubIcon from 'react-native-eva-icons/icons/Github';
@@ -44,11 +46,16 @@ export const GithubIcon = () => (
 );
 ```
 
+## Demo
+
+Try it on [Snack][link:demo]!
+
 ## Where is icons source code?
 
 React Native Eva Icons sources are generated with [ts-node scripts](./scripts/ts-node), so there is no need to track them in default branch of the repo. But if you don't trust CI and want to review generated sources, take a look at [bundle branch][link:build-branch].
 
 [link:build-branch]: https://github.com/artyorsh/react-native-eva-icons/tree/bundle/v1.0.0-beta.1
+[link:demo]: https://snack.expo.io/@art.yorsh/5cecd7
 [link:eva-icons]: https://github.com/akveo/eva-icons
 [link:react-native-svg]: https://github.com/react-native-community/react-native-svg
 [link:react-native-svg:install]: https://github.com/react-native-community/react-native-svg#installation
