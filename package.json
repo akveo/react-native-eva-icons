@@ -3,9 +3,9 @@
   "version": "1.0.0-beta.1",
   "description": "Eva Icons for React Native",
   "scripts": {
-    "start": "npm run generate && npm run lint:all:fix",
+    "start": "npm run install:pg && npm start --prefix ./playground",
     "build": "tsc",
-    "generate": "ts-node ./scripts/ts-node/start.ts ./lib/icons",
+    "generate": "ts-node ./scripts/ts-node/start.ts ./lib/icons && npm run lint:all:fix",
     "clean:build": "rimraf ./dist",
     "clean:lib": "rimraf ./lib/icons",
     "lint:tslint": "tslint -c ./tslint.json ./lib/icons/**/*.{ts,tsx}",
@@ -14,6 +14,7 @@
     "lint:all:fix": "npm run lint:prettier -- --write && npm run lint:tslint -- --fix",
     "release:prepare": "npm run clean:build && npm run build",
     "release": "npm run clean:build && npm run build",
+    "install:pg": "( cd ./playground && npm i )",
     "publish": "npm run release:prepare && npm publish --access=public ./dist/tsc-out",
     "test": "jest",
     "ci:install": "npm ci",
@@ -44,6 +45,8 @@
     "@types/rimraf": "^2.0.2",
     "@types/stringify-object": "^3.2.0",
     "babel-jest": "^24.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "change-case": "^3.1.0",
     "coveralls": "^3.0.4",
     "eva-icons": "^1.1.1",
     "jest": "^24.8.0",
@@ -56,7 +59,6 @@
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.5.1",
-    "change-case": "^3.1.0"
+    "typescript": "^3.5.1"
   }
 }
