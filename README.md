@@ -2,6 +2,8 @@
 
 ❤️ Clean and powerful [**Eva Icons**][link:eva-icons] implementation for **React Native** based on [react-native-svg][link:react-native-svg] elements.
 
+[<img src="https://i.imgur.com/cNC9jXj.png" />](./README.md)
+
 ## Installation
 
 ```bash
@@ -54,6 +56,14 @@ Try it on [Snack][link:demo]!
 
 React Native Eva Icons sources are generated with [ts-node scripts](./scripts/ts-node), so there is no need to track them in default branch of the repo. But if you don't trust CI and want to review generated sources, take a look at [bundle branch][link:build-branch].
 
+## How can I support this project?
+
+Any way of supporting gives me a ton of motivation to create other beautiful Open Source things
+
+- Star this repo :star:
+- Submit new issues, open a pull requests :wrench:
+- Follow me on [Twitter][link:twitter] :smirk_cat:
+
 [link:build-branch]: https://github.com/artyorsh/react-native-eva-icons/tree/bundle/v1.0.0-beta.1
 [link:demo]: https://snack.expo.io/@art.yorsh/5cecd7
 [link:eva-icons]: https://github.com/akveo/eva-icons
@@ -63,5 +73,6 @@ React Native Eva Icons sources are generated with [ts-node scripts](./scripts/ts
 [link:travis-ci]: https://travis-ci.com/artyorsh/react-native-eva-icons
 [link:coveralls]: https://coveralls.io/github/artyorsh/react-native-eva-icons?branch=master
 [link:eva]: https://eva.design
+[link:twitter]: https://twitter.com/artyorsh
 [badge:travis-ci]: https://travis-ci.com/artyorsh/react-native-eva-icons.svg?branch=master
 [badge:coveralls]: https://coveralls.io/repos/github/artyorsh/react-native-eva-icons/badge.svg?branch=master
