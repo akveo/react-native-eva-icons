@@ -2,6 +2,8 @@
 
 ❤️ Clean and powerful [**Eva Icons**][link:eva-icons] implementation for **React Native** based on [react-native-svg][link:react-native-svg] elements.
 
+[<img src="https://i.imgur.com/cNC9jXj.png" />](./README.md)
+
 ## Installation
 
 ```bash
