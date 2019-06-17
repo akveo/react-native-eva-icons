@@ -1,4 +1,4 @@
-## 1.0.0 (2019-06-17)
+## 1.1.0 (2019-06-17)
 
 * Add Playground App ([b39963e](https://github.com/artyorsh/react-native-eva-icons/commit/b39963e))
 * Add Developer and Contribution documentation ([b39963e](https://github.com/artyorsh/react-native-eva-icons/commit/b39963e))
