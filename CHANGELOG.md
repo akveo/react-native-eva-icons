@@ -1,4 +1,4 @@
-## 1.2.0 (2019-10-17)
+## 1.2.1 (2019-10-17)
 
 * Add animations support ([83168b2](https://github.com/artyorsh/react-native-eva-icons/commit/83168b2))
 
