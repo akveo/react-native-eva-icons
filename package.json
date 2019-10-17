@@ -1,6 +1,6 @@
 {
   "name": "react-native-eva-icons",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Eva Icons for React Native",
   "scripts": {
     "start": "npm run install:pg && npm start --prefix ./playground",
