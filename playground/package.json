@@ -4,12 +4,12 @@
     "start": "expo start -c"
   },
   "dependencies": {
-    "expo": "^33.0.0",
+    "expo": "^35.0.0",
     "react": "16.8.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-preset-expo": "^7.1.0"
   },
   "private": true
 }
