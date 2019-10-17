@@ -1,3 +1,7 @@
+## 1.2.0 (2019-10-17)
+
+* Add animations support ([83168b2](https://github.com/artyorsh/react-native-eva-icons/commit/83168b2))
+
 ## 1.1.0 (2019-06-17)
 
 * Add Playground App ([b39963e](https://github.com/artyorsh/react-native-eva-icons/commit/b39963e))
