@@ -48,6 +48,31 @@ export const GithubIcon = () => (
 );
 ```
 
+## Animations
+
+Implements original Eva Icons animations. Try [demo on Snack][link:demo] for review!
+
+```tsx
+import React from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
+import { Icon } from 'react-native-eva-icons';
+
+export const GithubIcon = () => {
+
+  const iconRef = React.createRef();
+
+  const onIconPress = () => {
+    iconRef.startAnimation();
+  };
+
+  return (
+    <TouchableWithoutFeedback onPress={onIconPress}>
+      <Icon ref={iconRef} animation='pulse' name='activity' />
+    </TouchableWithoutFeedback>
+  );
+};
+```
+
 ## Demo
 
 Try it on [Snack][link:demo]!
@@ -65,7 +90,7 @@ Any way of supporting gives me a ton of motivation to create other beautiful Ope
 - Follow me on [Twitter][link:twitter] :smirk_cat:
 
 [link:build-branch]: https://github.com/artyorsh/react-native-eva-icons/tree/bundle/v1.0.0-beta.1
-[link:demo]: https://snack.expo.io/@art.yorsh/5cecd7
+[link:demo]: https://snack.expo.io/@art.yorsh/react-native-eva-icons-playground
 [link:eva-icons]: https://github.com/akveo/eva-icons
 [link:react-native-svg]: https://github.com/react-native-community/react-native-svg
 [link:react-native-svg:install]: https://github.com/react-native-community/react-native-svg#installation
