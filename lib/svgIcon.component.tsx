@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { SvgProps } from 'react-native-svg';
 import { findIconByName } from './icons';
 
