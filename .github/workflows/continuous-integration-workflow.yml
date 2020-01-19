@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Running TypeScript compiler, TSLint and Jest
+    name: Running TSLint and Jest
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
@@ -25,9 +25,6 @@ jobs:
 
       - name: Lint
         run: npm run lint:tslint
-
-      - name: Build
-        run: npm run build
 
       - name: Test
         run: npm run ci:test
