@@ -42,5 +42,5 @@ If you're working on a feature which can affect UI please create a short demo on
 
 Before running an app make sure you have generated icons in a ./lib dir so application can resolve it.
 
-To run a playground application use `npm start`.
+To run a playground application use `yarn playground start`.
 

@@ -1,9 +1,16 @@
 {
   "name": "react-native-eva-icons",
   "version": "1.2.1",
+  "private": true,
   "description": "Eva Icons for React Native",
+  "workspaces": {
+    "packages": [
+      "lib",
+      "playground"
+    ]
+  },
   "scripts": {
-    "start": "npm run install:pg && npm start --prefix ./playground",
+    "playground": "yarn --cwd ./playground",
     "build": "tsc",
     "generate": "ts-node ./scripts/ts-node/start.ts ./lib/icons && npm run lint:all:fix",
     "clean:build": "rimraf ./dist",
@@ -14,7 +21,6 @@
     "lint:all:fix": "npm run lint:prettier -- --write && npm run lint:tslint -- --fix",
     "release:prepare": "npm run clean:build && npm run build",
     "release": "npm run clean:build && npm run build",
-    "install:pg": "( cd ./playground && npm i )",
     "publish": "npm run release:prepare && npm publish --access=public ./dist/tsc-out",
     "test": "jest",
     "ci:install": "npm ci",
@@ -38,27 +44,31 @@
   },
   "homepage": "https://github.com/artyorsh/react-native-eva-icons#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.19",
-    "@types/node": "^12.11.1",
-    "@types/react": "^16.9.9",
-    "@types/react-native": "^0.60.21",
-    "@types/rimraf": "^2.0.2",
-    "@types/stringify-object": "^3.2.0",
-    "babel-jest": "^24.8.0",
+    "@types/jest": "ts3.7",
+    "@types/node": "ts3.7",
+    "@types/react-native": "ts3.7",
+    "@types/rimraf": "ts3.7",
+    "@types/stringify-object": "ts3.7",
+    "babel-jest": "24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "change-case": "^3.1.0",
     "coveralls": "^3.0.4",
-    "eva-icons": "^1.1.1",
-    "jest": "^24.8.0",
+    "eva-icons": "^1.1.2",
+    "jest": "24.9.0",
     "prettier": "^1.17.1",
-    "react": "^16.8.6",
-    "react-native": "^0.59.9",
-    "react-native-svg": "^9.4.0",
+    "react": "16.9.0",
+    "react-native": "^0.61.5",
+    "react-native-svg": "9.13.3",
     "rimraf": "^2.6.3",
     "stringify-object": "^3.3.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.5"
+  },
+  "resolutions": {
+    "react": "~16.9.0",
+    "react-native": "~0.61.5",
+    "react-native-svg": "~9.13.3"
   }
 }
