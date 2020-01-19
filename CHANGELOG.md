@@ -1,3 +1,7 @@
+## 1.3.0 (2020-01-19)
+
+* React Native Web support ([464d0d0](https://github.com/artyorsh/react-native-eva-icons/commit/464d0d0))
+
 ## 1.2.1 (2019-10-17)
 
 * Add animations support ([83168b2](https://github.com/artyorsh/react-native-eva-icons/commit/83168b2))
