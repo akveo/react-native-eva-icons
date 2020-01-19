@@ -1,4 +1,4 @@
-# react-native-eva-icons [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />][link:eva] [![Build Status][badge:travis-ci]][link:travis-ci] [![Coverage Status][badge:coveralls]][link:coveralls]
+# react-native-eva-icons [<img src="https://i.imgur.com/oMcxwZ0.png" alt="Eva Design System" height="20px" />][link:eva] [![Build Status][badge:github-actions]][link:github-actions] [![Coverage Status][badge:coveralls]][link:coveralls]
 
 ❤️ Clean and powerful [**Eva Icons**][link:eva-icons] implementation for **React Native** based on [react-native-svg][link:react-native-svg] elements. [Demo][link:demo]
 
@@ -95,9 +95,9 @@ Any way of supporting gives me a ton of motivation to create other beautiful Ope
 [link:react-native-svg]: https://github.com/react-native-community/react-native-svg
 [link:react-native-svg:install]: https://github.com/react-native-community/react-native-svg#installation
 [link:react-native-svg:props]: https://github.com/react-native-community/react-native-svg#common-props
-[link:travis-ci]: https://travis-ci.com/artyorsh/react-native-eva-icons
+[link:github-actions]: https://github.com/akveo/react-native-ui-kitten/actions
 [link:coveralls]: https://coveralls.io/github/artyorsh/react-native-eva-icons?branch=master
 [link:eva]: https://eva.design
 [link:twitter]: https://twitter.com/artyorsh
-[badge:travis-ci]: https://travis-ci.com/artyorsh/react-native-eva-icons.svg?branch=master
+[badge:github-actions]: https://github.com/artyorsh/react-native-eva-icons/workflows/Build/badge.svg
 [badge:coveralls]: https://coveralls.io/repos/github/artyorsh/react-native-eva-icons/badge.svg?branch=master
