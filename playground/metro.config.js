@@ -11,12 +11,12 @@ module.exports = {
       '@babel/runtime': path.resolve(__dirname, './node_modules/@babel/runtime'),
       'react': path.resolve(__dirname, './node_modules/react'),
       'react-native': path.resolve(__dirname, './node_modules/react-native'),
+      'react-native-svg': path.resolve(__dirname, './node_modules/react-native-svg'),
     },
   },
   projectRoot: path.resolve(__dirname),
   watchFolders: [
     path.resolve(__dirname, '../lib'),
     path.resolve(__dirname, '../node_modules/@babel'),
-    path.resolve(__dirname, '../node_modules/react-native-svg'),
   ],
 };

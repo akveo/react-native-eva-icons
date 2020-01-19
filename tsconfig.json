@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "jsx": "react-native",
+    "jsx": "react",
     "target": "es2015",
     "module": "commonjs",
     "lib": [

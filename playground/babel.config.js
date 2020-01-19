@@ -18,15 +18,5 @@ module.exports = function (api) {
     ['module-resolver', moduleResolverConfig],
   ];
 
-  const devPlugins = [
-    '@babel/transform-react-jsx-source',
-  ];
-
-  const env = {
-    development: {
-      plugins: devPlugins,
-    },
-  };
-
-  return { presets, plugins, env };
+  return { presets, plugins };
 };
