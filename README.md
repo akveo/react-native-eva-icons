@@ -95,7 +95,7 @@ Any way of supporting gives me a ton of motivation to create other beautiful Ope
 [link:react-native-svg]: https://github.com/react-native-community/react-native-svg
 [link:react-native-svg:install]: https://github.com/react-native-community/react-native-svg#installation
 [link:react-native-svg:props]: https://github.com/react-native-community/react-native-svg#common-props
-[link:github-actions]: https://github.com/akveo/react-native-ui-kitten/actions
+[link:github-actions]: https://github.com/artyorsh/react-native-eva-icons/actions
 [link:coveralls]: https://coveralls.io/github/artyorsh/react-native-eva-icons?branch=master
 [link:eva]: https://eva.design
 [link:twitter]: https://twitter.com/artyorsh
