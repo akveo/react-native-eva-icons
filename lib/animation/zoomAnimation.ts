@@ -1,6 +1,7 @@
 import {
   Animated,
   Easing,
+  Platform,
   ViewProps,
 } from 'react-native';
 import {
@@ -13,6 +14,7 @@ const DEFAULT_CONFIG: ZoomAnimationConfig = {
   end: 0.5,
   easing: Easing.linear,
   duration: 500,
+  useNativeDriver: Platform.OS !== 'web',
 };
 
 type TimingAnimationConfig = Omit<Animated.TimingAnimationConfig, 'toValue'>;

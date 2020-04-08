@@ -1,6 +1,7 @@
 import {
   Animated,
   Easing,
+  Platform,
   ViewProps,
 } from 'react-native';
 import {
@@ -14,6 +15,7 @@ const DEFAULT_CONFIG: ShakeAnimationConfig = {
   easing: Easing.linear,
   duration: 25,
   cycles: 8,
+  useNativeDriver: Platform.OS !== 'web',
 };
 
 type TimingAnimationConfig = Omit<Animated.TimingAnimationConfig, 'toValue'>;

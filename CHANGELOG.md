@@ -1,3 +1,7 @@
+## 1.3.1 (2020-04-08)
+
+* Bump to latest Eva Icons ([1ef6929](https://github.com/artyorsh/react-native-eva-icons/commit/1ef6929))
+
 ## 1.3.0 (2020-01-19)
 
 * React Native Web support ([464d0d0](https://github.com/artyorsh/react-native-eva-icons/commit/464d0d0))
