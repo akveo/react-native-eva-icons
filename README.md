@@ -62,7 +62,7 @@ export const GithubIcon = () => {
   const iconRef = React.createRef();
 
   const onIconPress = () => {
-    iconRef.startAnimation();
+    iconRef.current?.startAnimation();
   };
 
   return (
