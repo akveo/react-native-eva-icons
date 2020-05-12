@@ -59,10 +59,10 @@ import { Icon } from 'react-native-eva-icons';
 
 export const GithubIcon = () => {
 
-  const iconRef = React.createRef();
+  const iconRef = React.useRef();
 
   const onIconPress = () => {
-    iconRef.startAnimation();
+    iconRef.current?.startAnimation();
   };
 
   return (
