@@ -3,10 +3,10 @@
     "name": "react-native-eva-icons-playground",
     "slug": "playground",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
     "version": "1.0.0",
     "orientation": "portrait",

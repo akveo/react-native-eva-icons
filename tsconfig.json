@@ -10,10 +10,10 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "jsx": "react",
-    "target": "es2015",
+    "target": "esnext",
     "module": "commonjs",
     "lib": [
-      "es2018"
+      "es6"
     ],
     "typeRoots": [
       "./node_modules/@types"
@@ -22,6 +22,11 @@
   "include": [
     "./lib/**/*.ts",
     "./lib/**/*.tsx",
-    "./lib/**/*.json"
+    "./lib/**/*.json",
+  ],
+  "exclude": [
+    "./node_modules",
+    "./babel.config.js",
+    "./jest.config.ts",
   ]
 }
