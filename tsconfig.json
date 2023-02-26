@@ -22,11 +22,11 @@
   "include": [
     "./lib/**/*.ts",
     "./lib/**/*.tsx",
-    "./lib/**/*.json",
+    "./lib/**/*.json"
   ],
   "exclude": [
     "./node_modules",
     "./babel.config.js",
-    "./jest.config.ts",
+    "./jest.config.ts"
   ]
 }
