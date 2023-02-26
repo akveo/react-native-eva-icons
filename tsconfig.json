@@ -2,27 +2,23 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/tsc-out",
-    "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "resolveJsonModule": true,
+    "composite": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "moduleResolution": "node",
     "jsx": "react",
-    "target": "esnext",
-    "module": "commonjs",
     "lib": [
-      "es6"
+      "esnext",
+      "dom"
     ],
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "esnext"
   },
   "include": [
     "./lib/**/*.ts",
     "./lib/**/*.tsx",
-    "./lib/**/*.json"
+    "./lib/**/*.json",
   ],
   "exclude": [
     "./node_modules",

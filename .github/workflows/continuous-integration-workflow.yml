@@ -27,4 +27,4 @@ jobs:
         run: npm run lint:tslint
 
       - name: Test
-        run: npm run ci:test
+        run: npm t -- --ci --coverage && cat ./dist/jest/coverage/lcov.info | coveralls

@@ -4,42 +4,38 @@ import {
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
+  TouchableWithoutFeedbackProps,
   View,
 } from 'react-native';
 import { Icon } from 'react-native-eva-icons';
 import GithubIcon from 'react-native-eva-icons/icons/Github';
 
+const Section: React.FC<TouchableWithoutFeedbackProps & { title: string }> = ({ title, ...props }) => (
+  <View style={styles.showcaseContainer}>
+  <Text>{title}</Text>
+    <TouchableWithoutFeedback {...props} />
+  </View>
+);
+
 export default (): React.ReactElement => {
 
-  const zoomIconRef: React.RefObject<Icon> = React.useRef();
-  const pulseIconRef: React.RefObject<Icon> = React.useRef();
-  const shakeIconRef: React.RefObject<Icon> = React.useRef();
-  const infiniteAnimationIconRef: React.RefObject<Icon> = React.useRef();
-
-  const onZoomIconPress = (): void => {
-    zoomIconRef.current.startAnimation();
-  };
-
-  const onPulseIconPress = (): void => {
-    pulseIconRef.current.startAnimation();
-  };
-
-  const onShakeIconPress = (): void => {
-    shakeIconRef.current.startAnimation();
-  };
+  const zoomIconRef = React.useRef<Icon>(null);
+  const pulseIconRef = React.useRef<Icon>(null);
+  const shakeIconRef = React.useRef<Icon>(null);
+  const infiniteAnimationIconRef = React.useRef<Icon>(null);
 
   const onInfiniteAnimationIconPress = (): void => {
-    if (infiniteAnimationIconRef.current.isAnimating()) {
-      infiniteAnimationIconRef.current.stopAnimation();
+    if (infiniteAnimationIconRef.current?.isAnimating()) {
+      infiniteAnimationIconRef.current?.stopAnimation();
     } else {
-      infiniteAnimationIconRef.current.startAnimation();
+      infiniteAnimationIconRef.current?.startAnimation();
     }
   };
 
   const onTestEndCallbackPress = (): void => {
-    zoomIconRef.current.startAnimation(() => {
-      pulseIconRef.current.startAnimation(() => {
-        shakeIconRef.current.startAnimation();
+    zoomIconRef.current?.startAnimation(() => {
+      pulseIconRef.current?.startAnimation(() => {
+        shakeIconRef.current?.startAnimation();
       });
     });
   };
@@ -47,43 +43,37 @@ export default (): React.ReactElement => {
   return (
     <View style={styles.container}>
 
-      <View style={styles.showcaseContainer}>
-        <Text>{'Default Icon\nIcons that are statically imported\nare not animateable'}</Text>
+      <Section title={'Default Icon\nIcons that are statically imported\nare not animateable'}>
         <GithubIcon {...styles.icon}/>
-      </View>
+      </Section>
 
-      <View style={styles.showcaseContainer}>
-        <Text>{'Zoom Animation\nPress to animate. Second press to stop'}</Text>
-        <TouchableWithoutFeedback onPress={onZoomIconPress}>
-          <Icon ref={zoomIconRef} width={64} height={64} name='maximize-outline' animation='zoom' />
-        </TouchableWithoutFeedback>
-      </View>
+      <Section 
+        title={'Zoom Animation\nPress to animate. Second press to stop'}
+        onPress={() => zoomIconRef.current?.startAnimation()}>
+        <Icon ref={zoomIconRef} {...styles.icon} name='maximize-outline' animation='zoom' />
+      </Section>
 
-      <View style={styles.showcaseContainer}>
-        <Text>{'Pulse Animation\nPress to animate'}</Text>
-        <TouchableWithoutFeedback onPress={onPulseIconPress}>
-          <Icon ref={pulseIconRef} width={64} height={64} name='activity' animation='pulse' />
-        </TouchableWithoutFeedback>
-      </View>
+      <Section 
+        title={'Pulse Animation\nPress to animate'}
+        onPress={() => pulseIconRef.current?.startAnimation()}>
+        <Icon ref={pulseIconRef} {...styles.icon} name='activity-outline' animation='pulse' />
+      </Section>
 
-      <View style={styles.showcaseContainer}>
-        <Text>{'Shake Animation\nPress to animate'}</Text>
-        <TouchableWithoutFeedback onPress={onShakeIconPress}>
-          <Icon ref={shakeIconRef} width={64} height={64} name='shake' animation='shake' />
-        </TouchableWithoutFeedback>
-      </View>
+      <Section 
+        title={'Shake Animation\nPress to animate'}
+        onPress={() => shakeIconRef.current?.startAnimation()}>
+        <Icon ref={shakeIconRef} {...styles.icon} name='shake' animation='shake' />
+      </Section>
+      
+      <Section 
+        title={'Infinite Animation\nPress to animate'}
+        onPress={onInfiniteAnimationIconPress}>
+        <Icon ref={infiniteAnimationIconRef} {...styles.icon} name='star' animationConfig={{ cycles: Infinity, useNativeDriver: true }} />
+      </Section>
 
-      <View style={styles.showcaseContainer}>
-        <Text>{'Infinite Animation\nPress to start / end animation'}</Text>
-        <TouchableWithoutFeedback onPress={onInfiniteAnimationIconPress}>
-          <Icon ref={infiniteAnimationIconRef} width={64} height={64} name='star' animationConfig={{ cycles: Infinity }} />
-        </TouchableWithoutFeedback>
-      </View>
-
-      <View style={styles.showcaseContainer}>
-        <Text>{'Completion Callback\nPress to test callback for animation end'}</Text>
-        <Button title='TEST' onPress={onTestEndCallbackPress}/>
-      </View>
+      <Section title={'Completion Callback\nPress to test callback for animation end'}>
+        <Button title='TEST' onPress={onTestEndCallbackPress} />
+      </Section>
 
     </View>
   );
@@ -102,7 +92,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   icon: {
-    // width: 64,
-    // height: 64,
+    width: 64,
+    height: 64,
+    fill: 'black',
   },
 });
