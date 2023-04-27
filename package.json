@@ -5,8 +5,7 @@
   "description": "Eva Icons for React Native",
   "workspaces": {
     "packages": [
-      "lib",
-      "playground"
+      "lib"
     ]
   },
   "scripts": {
@@ -53,19 +52,14 @@
     "eva-icons": "^1.1.3",
     "jest": "24.9.0",
     "prettier": "^1.17.1",
-    "react": "16.9.0",
-    "react-native": "^0.61.5",
-    "react-native-svg": "9.13.3",
     "rimraf": "^2.6.3",
     "stringify-object": "^3.3.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.2.0",
     "tslint": "^5.16.0",
-    "typescript": "^3.8.3"
-  },
-  "resolutions": {
-    "react": ">=16.9.0",
-    "react-native": ">=0.61.5",
-    "react-native-svg": ">=9.13.3"
+    "typescript": "4.3.5",
+    "react": "18.2.0",
+    "react-native": "0.71.7",
+    "react-native-svg": "13.9.0"
   }
 }

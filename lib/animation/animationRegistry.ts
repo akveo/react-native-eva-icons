@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { ViewProps } from 'react-native';
 import {
   Animation,
   AnimationConfig,
@@ -7,7 +7,7 @@ import { ZoomAnimation } from './zoomAnimation';
 import { PulseAnimation } from './pulseAnimation';
 import { ShakeAnimation } from './shakeAnimation';
 
-export type IconAnimation = Animation<any, ViewStyle>;
+export type IconAnimation = Animation<any, ViewProps>;
 
 export interface IconAnimationRegistry {
   zoom: IconAnimation;
