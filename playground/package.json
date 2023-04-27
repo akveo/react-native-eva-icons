@@ -1,26 +1,26 @@
 {
   "name": "react-native-eva-icons-playground",
-  "version": "1.3.0",
-  "main": "./node_modules/expo/AppEntry.js",
-  "workspaces": {
-    "nohoist": [
-      "*",
-      "*/**"
-    ]
-  },
+  "version": "1.4.0",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start -c"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "^36.0.2",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-svg": "9.13.3",
-    "react-native-web": "^0.11.7"
+    "expo": "48.0.15",
+    "expo-status-bar": "1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.7",
+    "react-native-svg": "13.4.0",
+    "react-native-eva-icons": "file:../dist/tsc-out/"
   },
   "devDependencies": {
-    "@expo/webpack-config": "0.7.6"
+    "@babel/core": "7.21.4",
+    "typescript": "4.9.5",
+    "@types/react": "18.0.38",
+    "@types/react-native": "0.71.6"
   },
   "private": true
 }
