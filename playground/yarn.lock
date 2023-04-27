@@ -34,7 +34,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.21.4.tgz#457ffe647c480dff59c2be092fc3acf71195c87f"
   integrity sha512-/DYyDpeCfaVinT40FPGdkkb+lYSKvsVuMjDAG7jPOWWiM1ibOaB9CXJAlc4d1QpP/U2q2P9jbrSlClKSErd55g==
 
-"@babel/core@^7.13.16", "@babel/core@^7.20.0":
+"@babel/core@7.21.4", "@babel/core@^7.13.16", "@babel/core@^7.20.0":
   version "7.21.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.21.4.tgz#c6dc73242507b8e2a27fd13a9c1814f9fa34a659"
   integrity sha512-qt/YV149Jman/6AfmlxJ04LMIu8bMoyl3RB91yTFrxQmgbrSvQMy7cI8Q62FHx1t8wJ8B5fu0UDoLwHAhUo1QA==
@@ -3181,12 +3181,12 @@ expo-modules-core@1.2.6:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
-expo-status-bar@~1.4.4:
+expo-status-bar@1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.4.4.tgz#6874ccfda5a270d66f123a9f220735a76692d114"
   integrity sha512-5DV0hIEWgatSC3UgQuAZBoQeaS9CqeWRZ3vzBR9R/+IUD87Adbi4FGhU10nymRqFXOizGsureButGZIXPs7zEA==
 
-expo@~48.0.15:
+expo@48.0.15:
   version "48.0.15"
   resolved "https://registry.yarnpkg.com/expo/-/expo-48.0.15.tgz#28194c03ac85f7f5a87b7493b8cef0eb405eccbe"
   integrity sha512-me2Xxr7Faxf60BiKq8WBSwkYV9BVbS+VqeHRFdXduVA0Uj2zp1a0zYB5eblmWqpRco75VBUgOa9M+/eR1YVZmw==
