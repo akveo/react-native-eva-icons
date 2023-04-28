@@ -1,29 +1,24 @@
 {
   "name": "react-native-eva-icons",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "private": true,
   "description": "Eva Icons for React Native",
   "workspaces": {
     "packages": [
-      "lib",
-      "playground"
+      "lib"
     ]
   },
   "scripts": {
     "playground": "yarn --cwd ./playground",
-    "build": "tsc",
-    "generate": "ts-node ./scripts/ts-node/start.ts ./lib/icons && npm run lint:all:fix",
-    "clean:build": "rimraf ./dist",
-    "clean:lib": "rimraf ./lib/icons",
-    "lint:tslint": "tslint -c ./tslint.json ./lib/icons/**/*.{ts,tsx}",
-    "lint:prettier": "prettier ./lib/icons/**/*.{ts,tsx} --single-quote --jsx-single-quote",
-    "lint:all": "npm run lint:prettier && npm run lint:tslint",
-    "lint:all:fix": "npm run lint:prettier -- --write && npm run lint:tslint -- --fix",
-    "release:prepare": "npm run clean:build && npm run build",
-    "release": "npm run clean:build && npm run build",
-    "publish": "npm run release:prepare && npm publish --access=public ./dist/tsc-out",
-    "test": "jest",
-    "ci:test": "npm t -- --ci --coverage && cat ./dist/jest/coverage/lcov.info | coveralls"
+    "build": "npm run build:lib && tsc && npm run lint",
+    "build:lib": "ts-node ./scripts/ts-node/start.ts ./lib/icons",
+    "rebuild": "npm run clean && npm run build",
+    "clean": "rimraf ./lib/icons ./dist",
+    "lint": "npm run lint:prettier && npm run lint:tslint",
+    "lint:tslint": "tslint -c ./tslint.json ./lib/icons/**/*.{ts,tsx} --fix",
+    "lint:prettier": "prettier ./lib/icons/**/*.{ts,tsx} --single-quote --jsx-single-quote --write",
+    "publish": "npm publish --access=public ./dist/tsc-out",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -41,31 +36,22 @@
   },
   "homepage": "https://github.com/artyorsh/react-native-eva-icons#readme",
   "devDependencies": {
-    "@types/jest": "ts3.8",
-    "@types/node": "ts3.8",
-    "@types/react-native": "ts3.8",
-    "@types/rimraf": "ts3.8",
-    "@types/stringify-object": "ts3.8",
-    "babel-jest": "24.9.0",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "change-case": "^3.1.0",
-    "coveralls": "^3.0.4",
-    "eva-icons": "^1.1.3",
-    "jest": "24.9.0",
-    "prettier": "^1.17.1",
-    "react": "16.9.0",
-    "react-native": "^0.61.5",
-    "react-native-svg": "9.13.3",
-    "rimraf": "^2.6.3",
-    "stringify-object": "^3.3.0",
-    "ts-jest": "^24.0.2",
-    "ts-node": "^8.2.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.8.3"
-  },
-  "resolutions": {
-    "react": ">=16.9.0",
-    "react-native": ">=0.61.5",
-    "react-native-svg": ">=9.13.3"
+    "@types/jest": "ts4.9",
+    "@types/node": "ts4.9",
+    "@types/react-native": "ts4.9",
+    "babel-jest": "29.0.3",
+    "change-case": "4.1.2",
+    "coveralls": "3.1.1",
+    "eva-icons": "1.1.3",
+    "jest": "29.0.3",
+    "prettier": "2.8.8",
+    "rimraf": "3.0.2",
+    "ts-jest": "29.0.5",
+    "ts-node": "10.9.1",
+    "tslint": "5.20.1",
+    "typescript": "4.9.5",
+    "react": "18.2.0",
+    "react-native": "0.71.7",
+    "react-native-svg": "13.9.0"
   }
 }

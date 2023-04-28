@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '14.x'
 
       - name: Install
         run: yarn
@@ -27,4 +27,4 @@ jobs:
         run: npm run lint:tslint
 
       - name: Test
-        run: npm run ci:test
+        run: npm t -- --ci --coverage && cat ./dist/jest/coverage/lcov.info

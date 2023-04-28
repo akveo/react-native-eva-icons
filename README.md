@@ -8,6 +8,8 @@
 
 ```bash
 npm i react-native-eva-icons
+# Using Yarn?
+# yarn add react-native-eva-icons
 ```
 
 This framework assumes you have already installed **react-native-svg**, but if not - you should [install it][link:react-native-svg:install] too.
@@ -20,7 +22,7 @@ Icons can be used by it's name using only `Icon` component.
 import { Icon } from 'react-native-eva-icons';
 
 export const GithubIcon = () => (
-  <Icon name='github' width={48} height={48}/>
+  <Icon name='github' width={48} height={48} fill='green' />
 );
 ```
 
@@ -30,7 +32,7 @@ You can also use a direct imports.
 import GithubIcon from 'react-native-eva-icons/icons/Github';
 
 export const GithubIcon = () => (
-  <GithubIcon width={48} height={48}/>
+  <GithubIcon width={48} height={48} fill='green' />
 );
 ```
 
@@ -44,7 +46,7 @@ For example, you can change icon fill color with the following code
 import { Icon } from 'react-native-eva-icons';
 
 export const GithubIcon = () => (
-  <Icon name='github' fill='red'/>
+  <Icon name='github' fill='green' />
 );
 ```
 
@@ -59,7 +61,7 @@ import { Icon } from 'react-native-eva-icons';
 
 export const GithubIcon = () => {
 
-  const iconRef = React.useRef();
+  const iconRef = React.useRef(null);
 
   const onIconPress = () => {
     iconRef.current?.startAnimation();
@@ -67,7 +69,7 @@ export const GithubIcon = () => {
 
   return (
     <TouchableWithoutFeedback onPress={onIconPress}>
-      <Icon ref={iconRef} animation='pulse' name='activity' />
+      <Icon ref={iconRef} animation='pulse' name='activity' fill='green' />
     </TouchableWithoutFeedback>
   );
 };

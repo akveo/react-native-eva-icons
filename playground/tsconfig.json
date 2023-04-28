@@ -1,15 +1,7 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "baseUrl": "./",
-    "noEmit": true,
-    "lib": ["dom", "esnext"],
-    "jsx": "react-native",
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "paths": {
-      "react-native-eva-icons": ["../lib"],
-      "react-native-eva-icons/*": ["../lib/*"]
-    }
   }
 }
